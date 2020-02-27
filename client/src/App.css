@@ -1,0 +1,24 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.ui{
+  width: 15vw;
+  height: 100vh;
+  background-color: lightgrey;
+}
+
+.tile_map{
+  width: 85vw;
+  height: 100vh;
+  background-color: gray;
+  border: 5px solid black;
+  box-sizing: border-box;
+}
+
+.tile{
+  width: 64px;
+  height: 64px;
+}

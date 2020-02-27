@@ -1,0 +1,23 @@
+{
+  "name": "tile_map_creator",
+  "version": "1.0.0",
+  "description": "Map editor for creating tile maps",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vulpie/tilemap_creator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vulpie/tilemap_creator/issues"
+  },
+  "homepage": "https://github.com/Vulpie/tilemap_creator#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
