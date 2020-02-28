@@ -26,13 +26,17 @@ class Tile extends Component {
     }
 
     render() {
+        let tile_menu
+        if (this.state.show_tile_change_window) {
+            tile_menu = (
+                <ChangeTileWindow changeSelectedTile={this.changeTile} />
+            )
+        } else {
+            tile_menu = null
+        }
         return (
             <React.Fragment>
-                {this.state.show_tile_change_window ? (
-                    <ChangeTileWindow changeSelectedTile={this.changeTile} />
-                ) : (
-                    console.log('Hidden')
-                )}
+                {tile_menu}
                 <img
                     src={this.state.tiles_img[this.state.tile.type]}
                     alt="grass"

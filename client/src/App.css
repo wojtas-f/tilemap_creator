@@ -2,6 +2,8 @@
   text-align: center;
   display: flex;
   flex-direction: row;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .ui{
@@ -16,6 +18,9 @@
   background-color: gray;
   border: 5px solid black;
   box-sizing: border-box;
+  overflow-x: auto;
+  overflow-y: auto;
+
 }
 
 .ground_layer{

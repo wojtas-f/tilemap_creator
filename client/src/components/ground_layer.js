@@ -18,10 +18,7 @@ class GroundLayer extends Component {
                 id++
             }
         }
-
-        console.log(tiles)
         this.setState({ tiles, ground_width })
-        console.log(this.state.tiles)
     }
 
     render() {

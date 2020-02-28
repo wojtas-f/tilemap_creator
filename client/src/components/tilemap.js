@@ -4,7 +4,7 @@ import GroundLayer from './ground_layer'
 class Tilemap extends Component {
     state = {
         tilemap: [0, 0, 0],
-        map_size: [10, 50],
+        map_size: [30, 30],
         tile_size: 64
     }
 
