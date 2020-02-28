@@ -3,36 +3,41 @@ import grass from '../tiles/g_grass1.png'
 import water from '../tiles/g_water1.png'
 import empty from '../tiles/g_empty.png'
 
+import ChangeTileWindow from './change_tile'
+
 class Tile extends Component {
     state = {
         tiles_img: [empty, water, grass],
         tile: {
-            type: 2
-        }
+            type: 1
+        },
+        show_tile_change_window: false
     }
 
-    changeTile = () => {
-        // let tile = this.state.tile
-        // if (tile.type === 1) {
-        //     tile.type = 2
-        // } else {
-        //     tile.type = 1
-        // }
-
-        // this.setState(tile)
-        // console.log(this.state.tile)
-        // console.log(this.state.tile)
-        this.props.change_tile()
+    changeTile = tile_number => {
+        let tile = this.state.tile
+        tile.type = tile_number
+        this.setState(tile)
+    }
+    toggleTileMenu = () => {
+        let show = !this.state.show_tile_change_window
+        console.log(show)
+        this.setState({ show_tile_change_window: show })
     }
 
     render() {
         return (
             <React.Fragment>
+                {this.state.show_tile_change_window ? (
+                    <ChangeTileWindow changeSelectedTile={this.changeTile} />
+                ) : (
+                    console.log('nie da rady')
+                )}
                 <img
                     src={this.state.tiles_img[this.state.tile.type]}
                     alt="grass"
                     className="tile"
-                    onClick={this.changeTile}
+                    onClick={() => this.toggleTileMenu()}
                 />
             </React.Fragment>
         )

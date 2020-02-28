@@ -5,8 +5,9 @@ import water from '../tiles/g_water1.png'
 import empty from '../tiles/g_empty.png'
 
 class ChangeTile extends Component {
-    selectTile = valu => {
-        console.log(valu)
+    selectTile = tile_number => {
+        //console.log(tile_number)
+        this.props.changeSelectedTile(tile_number)
     }
     render() {
         return (
@@ -14,22 +15,22 @@ class ChangeTile extends Component {
                 <div className="change_tile_window">
                     <h1>Hello change tile</h1>
                     <img
-                        src={grass}
-                        alt="grass"
+                        src={empty}
+                        alt="empty"
                         className="tile"
-                        onClick={() => this.selectTile(1)}
+                        onClick={() => this.selectTile(0)}
                     />
                     <img
                         src={water}
                         alt="water"
                         className="tile"
-                        onClick={() => this.selectTile(2)}
+                        onClick={() => this.selectTile(1)}
                     />
                     <img
-                        src={empty}
-                        alt="empty"
+                        src={grass}
+                        alt="grass"
                         className="tile"
-                        onClick={() => this.selectTile(3)}
+                        onClick={() => this.selectTile(2)}
                     />
                 </div>
             </Fragment>
