@@ -12,16 +12,17 @@ class Tile extends Component {
     }
 
     changeTile = () => {
-        let tile = this.state.tile
-        if (tile.type === 1) {
-            tile.type = 2
-        } else {
-            tile.type = 1
-        }
+        // let tile = this.state.tile
+        // if (tile.type === 1) {
+        //     tile.type = 2
+        // } else {
+        //     tile.type = 1
+        // }
 
-        this.setState(tile)
-        console.log(this.state.tile)
-        console.log(this.state.tile)
+        // this.setState(tile)
+        // console.log(this.state.tile)
+        // console.log(this.state.tile)
+        this.props.change_tile()
     }
 
     render() {
