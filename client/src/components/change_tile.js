@@ -12,26 +12,28 @@ class ChangeTile extends Component {
     render() {
         return (
             <Fragment>
-                <div className="change_tile_window">
-                    <h1>Hello change tile</h1>
-                    <img
-                        src={empty}
-                        alt="empty"
-                        className="tile"
-                        onClick={() => this.selectTile(0)}
-                    />
-                    <img
-                        src={water}
-                        alt="water"
-                        className="tile"
-                        onClick={() => this.selectTile(1)}
-                    />
-                    <img
-                        src={grass}
-                        alt="grass"
-                        className="tile"
-                        onClick={() => this.selectTile(2)}
-                    />
+                <div className="change_tile_window-bgc">
+                    <div className="change_tile_window">
+                        <h1>Hello change tile</h1>
+                        <img
+                            src={empty}
+                            alt="empty"
+                            className="tile"
+                            onClick={() => this.selectTile(0)}
+                        />
+                        <img
+                            src={water}
+                            alt="water"
+                            className="tile"
+                            onClick={() => this.selectTile(1)}
+                        />
+                        <img
+                            src={grass}
+                            alt="grass"
+                            className="tile"
+                            onClick={() => this.selectTile(2)}
+                        />
+                    </div>
                 </div>
             </Fragment>
         )

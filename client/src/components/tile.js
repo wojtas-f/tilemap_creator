@@ -17,11 +17,11 @@ class Tile extends Component {
     changeTile = tile_number => {
         let tile = this.state.tile
         tile.type = tile_number
-        this.setState(tile)
+        let show = !this.state.show_tile_change_window
+        this.setState({ tile, show_tile_change_window: show })
     }
     toggleTileMenu = () => {
         let show = !this.state.show_tile_change_window
-        console.log(show)
         this.setState({ show_tile_change_window: show })
     }
 
@@ -31,13 +31,14 @@ class Tile extends Component {
                 {this.state.show_tile_change_window ? (
                     <ChangeTileWindow changeSelectedTile={this.changeTile} />
                 ) : (
-                    console.log('nie da rady')
+                    console.log('Hidden')
                 )}
                 <img
                     src={this.state.tiles_img[this.state.tile.type]}
                     alt="grass"
                     className="tile"
                     onClick={() => this.toggleTileMenu()}
+                    id={this.props.id}
                 />
             </React.Fragment>
         )

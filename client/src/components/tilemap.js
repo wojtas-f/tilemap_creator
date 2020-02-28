@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react'
-import Tile from './tile'
+import GroundLayer from './ground_layer'
 
 class Tilemap extends Component {
     state = {
         tilemap: [0, 0, 0],
-        map_size: [128, 128],
+        map_size: [10, 50],
         tile_size: 64
     }
 
@@ -15,12 +15,10 @@ class Tilemap extends Component {
                     <div className="grid_layer"></div>
                     <div className="weather_layer"></div>
                     <div className="player_layer"></div>
-                    <div className="gournd_layer">
-                        <Tile
-                            changeTile={this.changeTile}
-                            tileset={this.state.tileset}
-                        />
-                    </div>
+                    <GroundLayer
+                        height={this.state.map_size[0]}
+                        width={this.state.map_size[1]}
+                    />
                 </div>
             </Fragment>
         )
