@@ -8,7 +8,7 @@
 
 .ui{
   width: 15vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: lightgrey;
 }
 
@@ -20,7 +20,26 @@
   box-sizing: border-box;
   overflow-x: auto;
   overflow-y: auto;
+  position: relative;
+}
 
+.grid_layer{
+  pointer-events:none;
+  opacity: 0.5;
+  z-index: 11;
+  display:flex;
+  flex-wrap: wrap;
+  min-height: 32;
+  position: absolute;
+
+}
+
+.grid_tile{
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  
 }
 
 .ground_layer{
@@ -39,7 +58,7 @@
   height: 100%;
   background-color: rgba(0,0,0,0.5);
   position: fixed;
-  z-index: 9;
+  z-index: 100;
 }
 
 .change_tile_window{

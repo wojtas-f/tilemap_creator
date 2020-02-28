@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import GroundLayer from './ground_layer'
+import GridLayer from './grid_layer'
 
 class Tilemap extends Component {
     state = {
@@ -12,9 +13,10 @@ class Tilemap extends Component {
         return (
             <Fragment>
                 <div className="tile_map">
-                    <div className="grid_layer"></div>
-                    <div className="weather_layer"></div>
-                    <div className="player_layer"></div>
+                    <GridLayer
+                        height={this.state.map_size[0]}
+                        width={this.state.map_size[1]}
+                    />
                     <GroundLayer
                         height={this.state.map_size[0]}
                         width={this.state.map_size[1]}
