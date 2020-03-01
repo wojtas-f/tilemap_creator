@@ -50,14 +50,13 @@ class LayerSelection extends Component {
                         <label>
                             <input
                                 type="radio"
-                                value="particle_effects_layer"
+                                value="overlay_layer"
                                 checked={
-                                    this.state.active_layer ===
-                                    'particle_effects_layer'
+                                    this.state.active_layer === 'overlay_layer'
                                 }
                                 onChange={this.handleChange}
                             />
-                            Particle Effects Layer
+                            Overlay Layer
                         </label>
                     </li>
                 </ul>

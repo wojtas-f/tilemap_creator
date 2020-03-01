@@ -74,7 +74,7 @@
 
 /* MODALS */
 
-.change_tile_window-bgc{
+.chselect-tile{
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.5);
@@ -82,11 +82,18 @@
   z-index: 100;
 }
 
-.change_tile_window{
+.chselect-tile__menu{
   z-index: 100;
   position: fixed;
   top: 50%;
   left: 50%;
   /*transform: translate(50%,0);*/
   background-color: red;
+}
+
+.chselect-tile__menu_tile{
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  border: 1px solid black;
 }
