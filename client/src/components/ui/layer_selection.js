@@ -15,9 +15,11 @@ class LayerSelection extends Component {
     }
     render() {
         return (
-            <Fragment>
-                <p>Select active layer:</p>
-                <ul>
+            <div className="ui__layer-selection">
+                <p className="ui__layer-selection-title">
+                    Select active layer:
+                </p>
+                <ul className="ui__layer-selection-list">
                     <li>
                         <label>
                             <input
@@ -59,7 +61,7 @@ class LayerSelection extends Component {
                         </label>
                     </li>
                 </ul>
-            </Fragment>
+            </div>
         )
     }
 }

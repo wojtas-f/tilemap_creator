@@ -12,6 +12,17 @@
   background-color: lightgrey;
 }
 
+.ui__layer-selection-title{
+  font-size: 1.2rem;
+  font-weight: 400;
+  border-bottom: 1px solid black;
+}
+.ui__layer-selection-list{
+  list-style: none;
+  text-align: start;
+}
+
+
 .tile_map{
   width: 85vw;
   height: 100vh;
