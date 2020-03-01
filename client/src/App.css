@@ -6,18 +6,20 @@
   overflow-y: hidden;
 }
 
+/* UI */
+
 .ui{
   width: 15vw;
   min-height: 100vh;
   background-color: lightgrey;
 }
 
-.ui__layer-selection-title{
+.ui__layer-selection_title{
   font-size: 1.2rem;
   font-weight: 400;
   border-bottom: 1px solid black;
 }
-.ui__layer-selection-list{
+.ui__layer-selection_list{
   list-style: none;
   text-align: start;
 }
@@ -34,7 +36,8 @@
   position: relative;
 }
 
-.grid_layer{
+/* GRID LAYER */
+.grid-layer{
   pointer-events:none;
   opacity: 0.5;
   z-index: 11;
@@ -45,7 +48,7 @@
 
 }
 
-.grid_tile{
+.grid-layer__tile{
   width: 32px;
   height: 32px;
   box-sizing: border-box;
@@ -53,16 +56,23 @@
   
 }
 
-.ground_layer{
+/* PLAYER LAYER */
+
+
+/* GRID LAYER */
+
+.ground-layer{
   display:flex;
   flex-wrap: wrap;
   min-height: 32;
 }
 
-.tile{
+.ground-layer__tile{
   width: 32px;
   height: 32px;
 }
+
+/* MODALS */
 
 .change_tile_window-bgc{
   width: 100%;

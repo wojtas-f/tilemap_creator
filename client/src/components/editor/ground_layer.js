@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Tile from './tile'
+import Tile from './groundTile'
 
 class GroundLayer extends Component {
     state = {
@@ -24,7 +24,7 @@ class GroundLayer extends Component {
     render() {
         return (
             <div
-                className="ground_layer"
+                className="ground-layer"
                 style={{ width: this.state.ground_width }}
             >
                 {this.state.tiles

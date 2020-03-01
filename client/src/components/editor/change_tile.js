@@ -1,12 +1,32 @@
 import React, { Component, Fragment } from 'react'
 
-import grass from '../../tiles/g_grass1.png'
-import water from '../../tiles/g_water1.png'
-import empty from '../../tiles/g_empty.png'
+import grass_1 from '../../tiles/grass_1.png'
+import grass_2 from '../../tiles/grass_2.png'
+import grass_3 from '../../tiles/grass_3.png'
+import grass_4 from '../../tiles/grass_4.png'
+import road_1 from '../../tiles/road_h_left-end.png'
+import road_2 from '../../tiles/road_h.png'
+import road_3 from '../../tiles/road_h_right-end.png'
+import road_4 from '../../tiles/road_v_top-end.png'
+import road_5 from '../../tiles/road_v.png'
+import road_6 from '../../tiles/road_v_bottom-end.png'
 
 class ChangeTile extends Component {
+    state = {
+        tiles: [
+            { name: grass_1, id: 0 },
+            { name: grass_2, id: 1 },
+            { name: grass_3, id: 2 },
+            { name: grass_4, id: 3 },
+            { name: road_1, id: 4 },
+            { name: road_2, id: 5 },
+            { name: road_3, id: 6 },
+            { name: road_4, id: 7 },
+            { name: road_5, id: 8 },
+            { name: road_6, id: 9 }
+        ]
+    }
     selectTile = tile_number => {
-        //console.log(tile_number)
         this.props.changeSelectedTile(tile_number)
     }
     render() {
@@ -15,24 +35,15 @@ class ChangeTile extends Component {
                 <div className="change_tile_window-bgc">
                     <div className="change_tile_window">
                         <h1>Hello change tile</h1>
-                        <img
-                            src={empty}
-                            alt="empty"
-                            className="tile"
-                            onClick={() => this.selectTile(0)}
-                        />
-                        <img
-                            src={water}
-                            alt="water"
-                            className="tile"
-                            onClick={() => this.selectTile(1)}
-                        />
-                        <img
-                            src={grass}
-                            alt="grass"
-                            className="tile"
-                            onClick={() => this.selectTile(2)}
-                        />
+                        {this.state.tiles.map(tile => (
+                            <img
+                                key={tile.id}
+                                src={tile.name}
+                                alt="empty"
+                                className="tile"
+                                onClick={() => this.selectTile(tile.id)}
+                            />
+                        ))}
                     </div>
                 </div>
             </Fragment>

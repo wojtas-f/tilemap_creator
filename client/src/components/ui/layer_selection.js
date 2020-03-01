@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 
 class LayerSelection extends Component {
     state = {
@@ -16,10 +16,10 @@ class LayerSelection extends Component {
     render() {
         return (
             <div className="ui__layer-selection">
-                <p className="ui__layer-selection-title">
+                <p className="ui__layer-selection_title">
                     Select active layer:
                 </p>
-                <ul className="ui__layer-selection-list">
+                <ul className="ui__layer-selection_list">
                     <li>
                         <label>
                             <input
