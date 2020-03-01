@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import grass from '../tiles/g_grass1.png'
-import water from '../tiles/g_water1.png'
-import empty from '../tiles/g_empty.png'
+import grass from '../../tiles/g_grass1.png'
+import water from '../../tiles/g_water1.png'
+import empty from '../../tiles/g_empty.png'
 
 import ChangeTileWindow from './change_tile'
 

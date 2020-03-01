@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react'
 
-import grass from '../tiles/g_grass1.png'
-import water from '../tiles/g_water1.png'
-import empty from '../tiles/g_empty.png'
+import grass from '../../tiles/g_grass1.png'
+import water from '../../tiles/g_water1.png'
+import empty from '../../tiles/g_empty.png'
 
 class ChangeTile extends Component {
     selectTile = tile_number => {
