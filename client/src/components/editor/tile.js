@@ -9,7 +9,7 @@ class Tile extends Component {
     state = {
         tiles_img: [empty, water, grass],
         tile: {
-            type: 1
+            type: 0
         },
         show_tile_change_window: false
     }
