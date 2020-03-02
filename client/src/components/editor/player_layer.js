@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import GridTile from './gridTile'
 
-class GridLayer extends Component {
+class PlayerLayer extends Component {
     state = {
         tiles: [],
         ground_width: 32
@@ -24,7 +24,7 @@ class GridLayer extends Component {
     render() {
         return (
             <div
-                className="grid-layer"
+                className="grid_layer"
                 style={{ width: this.state.ground_width }}
             >
                 {this.state.tiles
@@ -37,4 +37,4 @@ class GridLayer extends Component {
     }
 }
 
-export default GridLayer
+export default PlayerLayer

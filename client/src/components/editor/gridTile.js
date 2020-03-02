@@ -4,7 +4,7 @@ class GridTile extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="grid_tile" />
+                <div className="grid-layer__tile" />
             </React.Fragment>
         )
     }

@@ -6,11 +6,24 @@
   overflow-y: hidden;
 }
 
+/* UI */
+
 .ui{
   width: 15vw;
   min-height: 100vh;
   background-color: lightgrey;
 }
+
+.ui__layer-selection_title{
+  font-size: 1.2rem;
+  font-weight: 400;
+  border-bottom: 1px solid black;
+}
+.ui__layer-selection_list{
+  list-style: none;
+  text-align: start;
+}
+
 
 .tile_map{
   width: 85vw;
@@ -23,7 +36,8 @@
   position: relative;
 }
 
-.grid_layer{
+/* GRID LAYER */
+.grid-layer{
   pointer-events:none;
   opacity: 0.5;
   z-index: 11;
@@ -34,7 +48,7 @@
 
 }
 
-.grid_tile{
+.grid-layer__tile{
   width: 32px;
   height: 32px;
   box-sizing: border-box;
@@ -42,18 +56,25 @@
   
 }
 
-.ground_layer{
+/* PLAYER LAYER */
+
+
+/* GRID LAYER */
+
+.ground-layer{
   display:flex;
   flex-wrap: wrap;
   min-height: 32;
 }
 
-.tile{
+.ground-layer__tile{
   width: 32px;
   height: 32px;
 }
 
-.change_tile_window-bgc{
+/* MODALS */
+
+.chselect-tile{
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.5);
@@ -61,11 +82,18 @@
   z-index: 100;
 }
 
-.change_tile_window{
+.chselect-tile__menu{
   z-index: 100;
   position: fixed;
   top: 50%;
   left: 50%;
   /*transform: translate(50%,0);*/
   background-color: red;
+}
+
+.chselect-tile__menu_tile{
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  border: 1px solid black;
 }
