@@ -42,11 +42,6 @@ class GridLayer extends Component {
                 className="grid-layer"
                 style={{ width: this.state.ground_width }}
             >
-                {/* {this.state.tiles
-                    ? this.state.tiles.map(tile => (
-                          <GridTile key={tile.id} id={tile.id} />
-                      ))
-                    : 'Loading grid...'} */}
                 {grid}
             </div>
         )

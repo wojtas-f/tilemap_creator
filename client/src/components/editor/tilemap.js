@@ -5,13 +5,18 @@ import GridLayer from './grid_layer'
 class Tilemap extends Component {
     state = {
         tilemap: [0, 0, 0],
-        map_size: [50, 25],
+        map_size: [20, 15],
         tile_size: 64,
-        showGrid: true
+        showGrid: true,
+        active_layer: 'ground_layer'
     }
     componentDidUpdate() {
         if (this.props.showGrid !== this.state.showGrid) {
             this.setState({ showGrid: this.props.showGrid })
+        }
+
+        if (this.props.activeLayer !== this.state.active_layer) {
+            this.setState({ active_layer: this.props.activeLayer })
         }
     }
 
@@ -27,6 +32,7 @@ class Tilemap extends Component {
                     <GroundLayer
                         width={this.state.map_size[0]}
                         height={this.state.map_size[1]}
+                        activeLayer={this.state.active_layer}
                     />
                 </div>
             </Fragment>

@@ -4,7 +4,8 @@ import Tile from './groundTile'
 class GroundLayer extends Component {
     state = {
         tiles: [],
-        ground_width: 32
+        ground_width: 32,
+        active: true
     }
 
     componentDidMount() {
@@ -21,12 +22,34 @@ class GroundLayer extends Component {
         this.setState({ tiles, ground_width })
     }
 
+    componentDidUpdate() {
+        let isActive
+        if (this.props.activeLayer === 'ground_layer') {
+            isActive = true
+        } else {
+            isActive = false
+        }
+
+        if (isActive !== this.state.active) {
+            this.setState({ active: isActive })
+        }
+    }
+
     render() {
+        let activeStyle
+        if (this.state.active) {
+            activeStyle = {
+                pointerEvents: 'auto',
+                width: this.state.ground_width
+            }
+        } else {
+            activeStyle = {
+                pointerEvents: 'none',
+                width: this.state.ground_width
+            }
+        }
         return (
-            <div
-                className="ground-layer"
-                style={{ width: this.state.ground_width }}
-            >
+            <div className="ground-layer" style={activeStyle}>
                 {this.state.tiles
                     ? this.state.tiles.map(tile => (
                           <Tile key={tile.id} id={tile.id} />
