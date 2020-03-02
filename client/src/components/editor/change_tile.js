@@ -32,15 +32,15 @@ class ChangeTile extends Component {
     render() {
         return (
             <Fragment>
-                <div className="chselect-tile">
-                    <div className="chselect-tile__menu">
+                <div className="select-tile">
+                    <div className="select-tile__menu">
                         <h1>Select tile</h1>
                         {this.state.tiles.map(tile => (
                             <img
                                 key={tile.id}
                                 src={tile.name}
                                 alt="empty"
-                                className="chselect-tile__menu_tile"
+                                className="select-tile__menu_tile"
                                 onClick={() => this.selectTile(tile.id)}
                             />
                         ))}
