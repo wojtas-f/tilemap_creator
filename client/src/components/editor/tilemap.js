@@ -6,7 +6,13 @@ class Tilemap extends Component {
     state = {
         tilemap: [0, 0, 0],
         map_size: [50, 25],
-        tile_size: 64
+        tile_size: 64,
+        showGrid: true
+    }
+    componentDidUpdate() {
+        if (this.props.showGrid !== this.state.showGrid) {
+            this.setState({ showGrid: this.props.showGrid })
+        }
     }
 
     render() {
@@ -16,6 +22,7 @@ class Tilemap extends Component {
                     <GridLayer
                         width={this.state.map_size[0]}
                         height={this.state.map_size[1]}
+                        showGrid={this.state.showGrid}
                     />
                     <GroundLayer
                         width={this.state.map_size[0]}

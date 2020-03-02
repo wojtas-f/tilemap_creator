@@ -24,6 +24,20 @@
   text-align: start;
 }
 
+.ui__show-grid_title{
+  font-size: 1.2rem;
+  font-weight: 400;
+  border-bottom: 1px solid black;
+}
+
+.ui__show-grid_checkbox{
+  text-align: start;
+  padding-left: 40px;
+}
+
+
+/* Tilemap */
+
 
 .tile_map{
   width: 85vw;

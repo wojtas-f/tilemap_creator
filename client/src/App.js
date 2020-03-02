@@ -1,14 +1,12 @@
 import React from 'react'
 
 import './App.css'
-import Tilemap from './components/editor/tilemap'
-import UI from './components/ui/ui'
+import Editor from './components/editor'
 
 function App() {
     return (
         <div className="App">
-            <UI />
-            <Tilemap />
+            <Editor />
         </div>
     )
 }
