@@ -11,9 +11,13 @@ import road_4 from '../../tiles/road_v_top-end.png'
 import road_5 from '../../tiles/road_v.png'
 import road_6 from '../../tiles/road_v_bottom-end.png'
 
+import obstacle_1 from '../../tiles/obstacle_1.png'
+import tree_1 from '../../tiles/tree.png'
+import tree_2 from '../../tiles/tree_2.png'
+
 class ChangeTile extends Component {
     state = {
-        tiles: [
+        groundTiles: [
             { name: grass_1, id: 0 },
             { name: grass_2, id: 1 },
             { name: grass_3, id: 2 },
@@ -24,18 +28,29 @@ class ChangeTile extends Component {
             { name: road_4, id: 7 },
             { name: road_5, id: 8 },
             { name: road_6, id: 9 }
+        ],
+        playerTiles: [
+            { name: obstacle_1, id: 0 },
+            { name: tree_1, id: 1 },
+            { name: tree_2, id: 2 }
         ]
     }
     selectTile = tile_number => {
         this.props.changeSelectedTile(tile_number)
     }
     render() {
+        let tiles
+        if (this.props.tileSet === 'playerTiles') {
+            tiles = this.state.playerTiles
+        } else if (this.props.tileSet === 'groundTiles') {
+            tiles = this.state.groundTiles
+        }
         return (
             <Fragment>
                 <div className="select-tile">
                     <div className="select-tile__menu">
                         <h1>Select tile</h1>
-                        {this.state.tiles.map(tile => (
+                        {tiles.map(tile => (
                             <img
                                 key={tile.id}
                                 src={tile.name}

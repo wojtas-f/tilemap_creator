@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import GridTile from './gridTile'
+import PlayerTile from './playerTile'
 
 class PlayerLayer extends Component {
     state = {
         tiles: [],
-        ground_width: 32
+        ground_width: 32,
+        active: false
     }
 
     componentDidMount() {
@@ -21,15 +22,37 @@ class PlayerLayer extends Component {
         this.setState({ tiles, ground_width })
     }
 
+    componentDidUpdate() {
+        let isActive
+        if (this.props.activeLayer === 'player_layer') {
+            isActive = true
+        } else {
+            isActive = false
+        }
+
+        if (isActive !== this.state.active) {
+            this.setState({ active: isActive })
+        }
+    }
+
     render() {
+        let activeStyle
+        if (this.state.active) {
+            activeStyle = {
+                pointerEvents: 'auto',
+                width: this.state.ground_width
+            }
+        } else {
+            activeStyle = {
+                pointerEvents: 'none',
+                width: this.state.ground_width
+            }
+        }
         return (
-            <div
-                className="grid_layer"
-                style={{ width: this.state.ground_width }}
-            >
+            <div className="player-layer" style={activeStyle}>
                 {this.state.tiles
                     ? this.state.tiles.map(tile => (
-                          <GridTile key={tile.id} id={tile.id} />
+                          <PlayerTile key={tile.id} id={tile.id} />
                       ))
                     : 'Loading grid...'}
             </div>

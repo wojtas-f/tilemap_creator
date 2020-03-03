@@ -54,12 +54,11 @@
 .grid-layer{
   pointer-events:none;
   opacity: 0.5;
-  z-index: 11;
+  z-index: 4;
   display:flex;
   flex-wrap: wrap;
   min-height: 32;
   position: absolute;
-
 }
 
 .grid-layer__tile{
@@ -72,6 +71,25 @@
 
 /* PLAYER LAYER */
 
+.player-layer{
+  display:flex;
+  flex-wrap: wrap;
+  min-height: 32;
+  position: absolute;
+  z-index: 2;
+}
+
+.player-layer__tile{
+  width: 32px;
+  height: 32px;
+}
+
+.player-layer__empty-tile{
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
 
 /* GRID LAYER */
 
@@ -79,6 +97,7 @@
   display:flex;
   flex-wrap: wrap;
   min-height: 32;
+  z-index: 1;
 }
 
 .ground-layer__tile{
