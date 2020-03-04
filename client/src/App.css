@@ -35,6 +35,16 @@
   padding-left: 40px;
 }
 
+.ui__scale-map_title{
+  font-size: 1.2rem;
+  font-weight: 400;
+  border-bottom: 1px solid black;
+}
+
+.ui__scale-map_select{
+  text-align: start;
+}
+
 
 /* Tilemap */
 
@@ -87,8 +97,6 @@
 .player-layer__empty-tile{
   width: 32px;
   height: 32px;
-  box-sizing: border-box;
-  border: 1px solid black;
 }
 
 /* GRID LAYER */

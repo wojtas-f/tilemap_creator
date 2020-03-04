@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import LayerSelection from './layer_selection'
 import ShowGrid from './show_grid'
+import ScaleMap from './scale_map'
 
 class UI extends Component {
     handleGridOpacityChange = show => {
@@ -18,6 +19,7 @@ class UI extends Component {
                 <ShowGrid
                     handleGridOpacityChange={this.handleGridOpacityChange}
                 />
+                <ScaleMap />
             </div>
         )
     }
