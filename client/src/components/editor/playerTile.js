@@ -14,7 +14,9 @@ class PlayerTile extends Component {
         },
         filled: false,
         show_tile_change_window: false,
-        tileSet: 'playerTiles'
+        tileSet: 'playerTiles',
+        width: 32,
+        height: 32
     }
 
     changeTile = tile_number => {
@@ -27,6 +29,15 @@ class PlayerTile extends Component {
     toggleTileMenu = () => {
         let show = !this.state.show_tile_change_window
         this.setState({ show_tile_change_window: show })
+    }
+
+    componentDidUpdate() {
+        if (this.props.tileSize !== this.state.width) {
+            this.setState({
+                width: this.props.tileSize,
+                height: this.props.tileSize
+            })
+        }
     }
 
     render() {
@@ -48,16 +59,24 @@ class PlayerTile extends Component {
                 <img
                     src={this.state.tiles_img[this.state.tile.type]}
                     alt="obstacle"
-                    className="player-layer__tile"
+                    className="tile"
                     onClick={() => this.toggleTileMenu()}
                     id={this.props.id}
+                    style={{
+                        width: this.state.width,
+                        height: this.state.height
+                    }}
                 />
             )
         } else {
             tile = (
                 <div
-                    className="player-layer__empty-tile"
+                    className="tile"
                     onClick={() => this.toggleTileMenu()}
+                    style={{
+                        width: this.state.width,
+                        height: this.state.height
+                    }}
                 ></div>
             )
         }

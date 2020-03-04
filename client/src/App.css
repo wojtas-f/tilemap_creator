@@ -72,11 +72,8 @@
 }
 
 .grid-layer__tile{
-  width: 32px;
-  height: 32px;
   box-sizing: border-box;
   border: 1px solid black;
-  
 }
 
 /* PLAYER LAYER */
@@ -89,16 +86,6 @@
   z-index: 2;
 }
 
-.player-layer__tile{
-  width: 32px;
-  height: 32px;
-}
-
-.player-layer__empty-tile{
-  width: 32px;
-  height: 32px;
-}
-
 /* GRID LAYER */
 
 .ground-layer{
@@ -108,7 +95,9 @@
   z-index: 1;
 }
 
-.ground-layer__tile{
+/* TILE */
+
+.tile{
   width: 32px;
   height: 32px;
 }

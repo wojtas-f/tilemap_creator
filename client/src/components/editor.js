@@ -21,16 +21,24 @@ class Editor extends Component {
         }
         console.log('Active layer: ', active_layer)
     }
+
+    handleMapScaling = tileSize => {
+        console.log(`tileSize: ${tileSize}`)
+        this.setState({ tileSize })
+    }
+
     render() {
         return (
             <div className="App">
                 <UI
                     handleGridOpacityChange={this.handleGridOpacityChange}
                     handleLayerChange={this.handleLayerChange}
+                    handleMapScaling={this.handleMapScaling}
                 />
                 <Tilemap
                     showGrid={this.state.showGrid}
                     activeLayer={this.state.active_layer}
+                    tileSize={this.state.tileSize}
                 />
             </div>
         )

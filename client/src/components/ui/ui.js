@@ -11,6 +11,9 @@ class UI extends Component {
         this.props.handleLayerChange(active_layer)
         //console.log(`Active layer: ${active_layer}`)
     }
+    handleMapScaling = tileSize => {
+        this.props.handleMapScaling(tileSize)
+    }
 
     render() {
         return (
@@ -19,7 +22,7 @@ class UI extends Component {
                 <ShowGrid
                     handleGridOpacityChange={this.handleGridOpacityChange}
                 />
-                <ScaleMap />
+                <ScaleMap handleMapScaling={this.handleMapScaling} />
             </div>
         )
     }

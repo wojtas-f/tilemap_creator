@@ -5,11 +5,10 @@ import PlayerLayer from './player_layer'
 
 class Tilemap extends Component {
     state = {
-        tilemap: [0, 0, 0],
         map_size: [20, 15],
-        tile_size: 64,
         showGrid: true,
-        active_layer: 'ground_layer'
+        active_layer: 'ground_layer',
+        tileSize: 32
     }
     componentDidUpdate() {
         if (this.props.showGrid !== this.state.showGrid) {
@@ -18,6 +17,11 @@ class Tilemap extends Component {
 
         if (this.props.activeLayer !== this.state.active_layer) {
             this.setState({ active_layer: this.props.activeLayer })
+        }
+
+        if (this.props.tileSize !== this.state.tileSize) {
+            console.log('TileSize change')
+            this.setState({ tileSize: this.props.tileSize })
         }
     }
 
@@ -29,16 +33,19 @@ class Tilemap extends Component {
                         width={this.state.map_size[0]}
                         height={this.state.map_size[1]}
                         showGrid={this.state.showGrid}
+                        tileSize={this.state.tileSize}
                     />
                     <PlayerLayer
                         width={this.state.map_size[0]}
                         height={this.state.map_size[1]}
                         activeLayer={this.state.active_layer}
+                        tileSize={this.state.tileSize}
                     />
                     <GroundLayer
                         width={this.state.map_size[0]}
                         height={this.state.map_size[1]}
                         activeLayer={this.state.active_layer}
+                        tileSize={this.state.tileSize}
                     />
                 </div>
             </Fragment>

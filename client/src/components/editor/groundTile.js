@@ -30,7 +30,9 @@ class Tile extends Component {
             type: 0
         },
         show_tile_change_window: false,
-        tileSet: 'groundTiles'
+        tileSet: 'groundTiles',
+        width: 32,
+        height: 32
     }
 
     changeTile = tile_number => {
@@ -42,6 +44,15 @@ class Tile extends Component {
     toggleTileMenu = () => {
         let show = !this.state.show_tile_change_window
         this.setState({ show_tile_change_window: show })
+    }
+
+    componentDidUpdate() {
+        if (this.props.tileSize !== this.state.width) {
+            this.setState({
+                width: this.props.tileSize,
+                height: this.props.tileSize
+            })
+        }
     }
 
     render() {
@@ -62,9 +73,13 @@ class Tile extends Component {
                 <img
                     src={this.state.tiles_img[this.state.tile.type]}
                     alt="ground tile"
-                    className="ground-layer__tile"
+                    className="tile"
                     onClick={() => this.toggleTileMenu()}
                     id={this.props.id}
+                    style={{
+                        width: this.state.width,
+                        height: this.state.height
+                    }}
                 />
             </React.Fragment>
         )

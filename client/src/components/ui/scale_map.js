@@ -2,30 +2,30 @@ import React, { Component } from 'react'
 
 class ScaleMap extends Component {
     state = {
-        scale: 1
+        tileSize: 32
     }
 
     handleChange = event => {
-        console.log(event.target.value)
+        let size = parseInt(event.target.value)
+        this.props.handleMapScaling(size)
+        this.setState({ tileSize: size })
     }
 
     render() {
         return (
             <div className="ui__scale-map">
-                <p className="ui__scale-map_title">Map scale:</p>
+                <p className="ui__scale-map_title">Tile size:</p>
                 <label>
-                    Scale:
+                    px:
                     <select
-                        value={this.state.value}
+                        value={this.state.tileSize}
                         onChange={this.handleChange}
                         className="ui__scale-map_select"
                     >
-                        <option value="1">100%</option>
-                        <option value="1.1">110%</option>
-                        <option value="1.2">120%</option>
-                        <option value="1.3">130%</option>
-                        <option value="1.4">140%</option>
-                        <option value="1.5">150%</option>
+                        <option value="24">24px</option>
+                        <option value="32">32px</option>
+                        <option value="48">48px</option>
+                        <option value="64">64px</option>
                     </select>
                 </label>
             </div>
