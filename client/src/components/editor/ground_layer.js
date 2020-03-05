@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Tile from './groundTile'
+import GroundTile from './groundTile'
 
 import {
     createArrayOfTiles,
@@ -50,7 +50,7 @@ class GroundLayer extends Component {
             <div className="ground-layer" style={activeStyle}>
                 {this.state.tiles
                     ? this.state.tiles.map(tile => (
-                          <Tile
+                          <GroundTile
                               key={tile.id}
                               id={tile.id}
                               tileSize={this.state.tileSize}

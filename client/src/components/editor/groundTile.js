@@ -12,7 +12,7 @@ import road_6 from '../../tiles/road_v_bottom-end.png'
 
 import ChangeTileWindow from './change_tile'
 
-class Tile extends Component {
+class GroundTile extends Component {
     state = {
         tiles_img: [
             grass_1,
@@ -86,4 +86,4 @@ class Tile extends Component {
     }
 }
 
-export default Tile
+export default GroundTile
