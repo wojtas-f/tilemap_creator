@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import PlayerTile from './playerTile'
 
+import {
+    createArrayOfTiles,
+    setActiveStyleWidth
+} from '../../helpers/layers_helper'
+
 class PlayerLayer extends Component {
     state = {
         tiles: [],
@@ -11,15 +16,8 @@ class PlayerLayer extends Component {
 
     componentDidMount() {
         const { height, width } = this.props
-        let tiles = []
-        let id = 0
+        let tiles = createArrayOfTiles(width, height)
         let ground_width = this.state.tileSize * width
-        for (let index = 0; index < width; index++) {
-            for (let index = 0; index < height; index++) {
-                tiles.push({ id })
-                id++
-            }
-        }
         this.setState({ tiles, ground_width })
     }
 
@@ -43,18 +41,11 @@ class PlayerLayer extends Component {
     }
 
     render() {
-        let activeStyle
-        if (this.state.active) {
-            activeStyle = {
-                pointerEvents: 'auto',
-                width: this.state.ground_width
-            }
-        } else {
-            activeStyle = {
-                pointerEvents: 'none',
-                width: this.state.ground_width
-            }
-        }
+        let activeStyle = setActiveStyleWidth(
+            this.state.active,
+            this.state.ground_width
+        )
+
         return (
             <div className="player-layer" style={activeStyle}>
                 {this.state.tiles

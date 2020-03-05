@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import GridTile from './gridTile'
 
+import { createArrayOfTiles } from '../../helpers/layers_helper'
+
 class GridLayer extends Component {
     state = {
         tiles: [],
@@ -11,15 +13,9 @@ class GridLayer extends Component {
 
     componentDidMount() {
         const { height, width } = this.props
-        let tiles = []
-        let id = 0
+        let tiles = createArrayOfTiles(width, height)
         let ground_width = this.state.tileSize * width
-        for (let index = 0; index < width; index++) {
-            for (let index = 0; index < height; index++) {
-                tiles.push({ id })
-                id++
-            }
-        }
+
         this.setState({ tiles, ground_width })
     }
 
