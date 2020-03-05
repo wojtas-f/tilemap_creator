@@ -68,7 +68,7 @@
   display:flex;
   flex-wrap: wrap;
   min-height: 32;
-  position: absolute;
+  position: absolute !important;
 }
 
 .grid-layer__tile{
@@ -83,6 +83,7 @@
   flex-wrap: wrap;
   min-height: 32;
   position: absolute;
+  top: 0;
   z-index: 2;
 }
 

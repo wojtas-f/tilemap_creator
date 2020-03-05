@@ -33,7 +33,8 @@ class ChangeTile extends Component {
             { name: obstacle_1, id: 0 },
             { name: tree_1, id: 1 },
             { name: tree_2, id: 2 }
-        ]
+        ],
+        colorFrames: ['red', 'aqua', 'lime']
     }
     selectTile = tile_number => {
         this.props.changeSelectedTile(tile_number)
@@ -49,6 +50,7 @@ class ChangeTile extends Component {
         } else if (this.props.tileSet === 'groundTiles') {
             tiles = this.state.groundTiles
         }
+
         return (
             <Fragment>
                 <div className="select-tile">
@@ -63,6 +65,17 @@ class ChangeTile extends Component {
                                 onClick={() => this.selectTile(tile.id)}
                             />
                         ))}
+                        {this.state.colorFrames.forEach(item => (
+                            <div
+                                className="tile"
+                                style={{
+                                    borderWidth: 2,
+                                    borderColor: item,
+                                    borderStyle: 'solid'
+                                }}
+                            ></div>
+                        ))}
+
                         <div
                             className="select-tile__menu_x-button"
                             onClick={this.closeWindow}
