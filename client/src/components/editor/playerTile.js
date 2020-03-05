@@ -7,7 +7,9 @@ import tree_2 from '../../tiles/tree_2.png'
 class PlayerTile extends Component {
     state = {
         tiles_img: [obstacle_1, tree_1, tree_2],
+        frames: ['none', 'red', 'aqua', 'lime'],
         tile: 0,
+        frame: 100,
         filled: false,
         tileSet: 'playerTiles',
         width: 32,
@@ -15,9 +17,22 @@ class PlayerTile extends Component {
         selectedTile: 0
     }
 
+    /**
+     * Change tile image or tile frame
+     * If selectedTile parameter >= 100 - change frame
+     * If selectedTile parameter < 100 - change image
+     */
     changeTile = () => {
-        if (this.state.tile !== this.state.selectedTile) {
-            this.setState({ tile: this.state.selectedTile, filled: true })
+        if (this.state.selectedTile >= 100) {
+            let frame = this.state.selectedTile
+            this.setState({ frame })
+        } else {
+            if (
+                this.state.tile !== this.state.selectedTile ||
+                this.state.filled === false
+            ) {
+                this.setState({ tile: this.state.selectedTile, filled: true })
+            }
         }
     }
 
@@ -35,6 +50,22 @@ class PlayerTile extends Component {
 
     render() {
         let tile
+        let frameStyle
+        if (this.state.frame === 100) {
+            frameStyle = {
+                width: this.state.width,
+                height: this.state.height
+            }
+        } else {
+            frameStyle = {
+                width: this.state.width,
+                height: this.state.height,
+                borderWidth: 2,
+                borderColor: this.state.frames[this.state.frame - 100],
+                borderStyle: 'solid'
+            }
+        }
+
         if (this.state.filled) {
             tile = (
                 <img
@@ -54,10 +85,7 @@ class PlayerTile extends Component {
                 <div
                     className="tile"
                     onClick={this.changeTile}
-                    style={{
-                        width: this.state.width,
-                        height: this.state.height
-                    }}
+                    style={frameStyle}
                 ></div>
             )
         }

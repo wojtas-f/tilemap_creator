@@ -35,9 +35,10 @@ class TilesSelection extends Component {
             { name: tree_2, id: 2 }
         ],
         frames: [
-            { color: 'red', id: 0 },
-            { color: 'aqua', id: 1 },
-            { color: 'lime', id: 2 }
+            { color: 'none', id: 100 },
+            { color: 'red', id: 101 },
+            { color: 'aqua', id: 102 },
+            { color: 'lime', id: 103 }
         ],
         activeLayer: 'ground_layer'
     }
@@ -47,8 +48,12 @@ class TilesSelection extends Component {
         }
     }
 
-    selectTile = tileNumber => {
-        this.props.handleTileChange(tileNumber)
+    selectTile = tileID => {
+        this.props.handleTileChange(tileID)
+    }
+
+    selectFrame = frameID => {
+        this.props.handleTileChange(frameID)
     }
 
     render() {
@@ -89,6 +94,7 @@ class TilesSelection extends Component {
                                           borderColor: item.color,
                                           borderStyle: 'solid'
                                       }}
+                                      onClick={() => this.selectFrame(item.id)}
                                   ></div>
                               ))
                             : 'Tiles...'}

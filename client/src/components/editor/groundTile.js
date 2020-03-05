@@ -44,7 +44,10 @@ class GroundTile extends Component {
                 height: this.props.tileSize
             })
         }
-        if (this.props.selectedTile !== this.state.selectedTile) {
+        if (
+            this.props.selectedTile !== this.state.selectedTile &&
+            this.props.selectedTile < 100
+        ) {
             this.setState({ selectedTile: this.props.selectedTile })
         }
     }
