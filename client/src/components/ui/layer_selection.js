@@ -12,7 +12,10 @@ class LayerSelection extends Component {
         this.setState({
             active_layer
         })
+
+        this.props.handleLayerChange(active_layer)
     }
+
     render() {
         return (
             <div className="ui__layer-selection">
