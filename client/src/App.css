@@ -98,8 +98,14 @@
 /* TILE */
 
 .tile{
+  box-sizing: border-box;
   width: 32px;
   height: 32px;
+}
+
+.tile:hover{
+  cursor: pointer;
+  border: 2px aquamarine outset;
 }
 
 /* MODALS */
