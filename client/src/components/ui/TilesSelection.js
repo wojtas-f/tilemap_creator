@@ -15,7 +15,7 @@ import obstacle_1 from '../../tiles/obstacle_1.png'
 import tree_1 from '../../tiles/tree.png'
 import tree_2 from '../../tiles/tree_2.png'
 
-class ChangeTile extends Component {
+class TilesSelection extends Component {
     state = {
         groundTiles: [
             { name: grass_1, id: 0 },
@@ -33,23 +33,41 @@ class ChangeTile extends Component {
             { name: obstacle_1, id: 0 },
             { name: tree_1, id: 1 },
             { name: tree_2, id: 2 }
-        ]
+        ],
+        frames: [
+            { color: 'red', id: 0 },
+            { color: 'aqua', id: 1 },
+            { color: 'lime', id: 2 }
+        ],
+        activeLayer: 'ground_layer'
     }
-    selectTile = tile_number => {
-        this.props.changeSelectedTile(tile_number)
+    componentDidUpdate() {
+        if (this.props.activeLayer !== this.state.activeLayer) {
+            this.setState({ activeLayer: this.props.activeLayer })
+        }
     }
+
+    selectTile = tileNumber => {
+        this.props.handleTileChange(tileNumber)
+    }
+
     render() {
         let tiles
-        if (this.props.tileSet === 'playerTiles') {
+        let colorFrames
+        if (this.state.activeLayer === 'player_layer') {
+            console.log('Player tile tiles')
             tiles = this.state.playerTiles
-        } else if (this.props.tileSet === 'groundTiles') {
+            colorFrames = this.state.frames
+        } else if (this.state.activeLayer === 'ground_layer') {
             tiles = this.state.groundTiles
+            colorFrames = null
         }
+
         return (
             <Fragment>
-                <div className="select-tile">
-                    <div className="select-tile__menu">
-                        <h1>Select tile</h1>
+                <div className="ui__tiles-selection">
+                    <p className="ui__tiles-selection_title">Select Tile</p>
+                    <div className="ui__tiles-selection_tiles-menu">
                         {tiles.map(tile => (
                             <img
                                 key={tile.id}
@@ -60,10 +78,25 @@ class ChangeTile extends Component {
                             />
                         ))}
                     </div>
+                    <div className="ui__tiles-selection_tiles-menu">
+                        {colorFrames
+                            ? colorFrames.map(item => (
+                                  <div
+                                      key={item.id}
+                                      className="tile"
+                                      style={{
+                                          borderWidth: 2,
+                                          borderColor: item.color,
+                                          borderStyle: 'solid'
+                                      }}
+                                  ></div>
+                              ))
+                            : 'Tiles...'}
+                    </div>
                 </div>
             </Fragment>
         )
     }
 }
 
-export default ChangeTile
+export default TilesSelection

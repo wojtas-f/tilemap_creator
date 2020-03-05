@@ -45,6 +45,25 @@
   text-align: start;
 }
 
+.ui__tiles-selection{
+  width: 100%;
+}
+
+.ui__tiles-selection_title{
+  font-size: 1.2rem;
+  font-weight: 400;
+  border-bottom: 1px solid black;
+}
+
+.ui__tiles-selection_tiles-menu{
+  display: flex;
+  flex-wrap: wrap; 
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 5px 0;
+}
+
 
 /* Tilemap */
 
@@ -69,6 +88,7 @@
   flex-wrap: wrap;
   min-height: 32;
   position: absolute;
+  top: 0;
 }
 
 .grid-layer__tile{
@@ -83,6 +103,7 @@
   flex-wrap: wrap;
   min-height: 32;
   position: absolute;
+  top: 0;
   z-index: 2;
 }
 
@@ -111,21 +132,25 @@
 /* MODALS */
 
 .select-tile{
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0,0,0,0.5);
   position: fixed;
-  z-index: 11;
+  top:0;
+  left: 0;
+  z-index: 11 !important;
 }
 
 .select-tile__menu{
   position: fixed;
   top: 30%;
   left: 50%;
+  transform: translateX(-50%);
   background-color: lightgrey;
   padding: 20px;
   border-radius: 15px;
   border: 2px solid black;
+  z-index: 11;
 }
 
 .select-tile__menu_tile{
@@ -138,4 +163,19 @@
 .select-tile__menu_tile:hover{
   cursor: pointer;
   border: 2px solid rgb(2, 210, 247);
+}
+
+.select-tile__menu_x-button{
+  padding: 10px;
+  background-color: red;
+  max-width: 20px;
+  margin-right: auto;
+  margin-left: auto; 
+  border-radius: 15px;
+}
+
+.select-tile__menu_x-button:hover{
+  background-color: rgb(177, 31, 31);
+  cursor: pointer;
+
 }

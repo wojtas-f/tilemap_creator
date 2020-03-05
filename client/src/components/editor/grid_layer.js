@@ -17,6 +17,7 @@ class GridLayer extends Component {
         let ground_width = this.state.tileSize * width
 
         this.setState({ tiles, ground_width })
+        console.log('Width: ', this.state.ground_width)
     }
 
     componentDidUpdate() {
@@ -27,6 +28,7 @@ class GridLayer extends Component {
             const { width } = this.props
             let ground_width = this.props.tileSize * width
             this.setState({ tileSize: this.props.tileSize, ground_width })
+            console.log('Width--: ', this.state.ground_width)
         }
     }
 

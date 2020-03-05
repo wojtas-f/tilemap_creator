@@ -1,14 +1,14 @@
 import React, { Component, Fragment } from 'react'
-import GroundLayer from './ground_layer'
 import GridLayer from './grid_layer'
-import PlayerLayer from './player_layer'
+import Layer from './Layer'
 
 class Tilemap extends Component {
     state = {
         map_size: [20, 15],
         showGrid: true,
         active_layer: 'ground_layer',
-        tileSize: 32
+        tileSize: 32,
+        selectedTile: 0
     }
     componentDidUpdate() {
         if (this.props.showGrid !== this.state.showGrid) {
@@ -23,6 +23,10 @@ class Tilemap extends Component {
             console.log('TileSize change')
             this.setState({ tileSize: this.props.tileSize })
         }
+
+        if (this.props.selectedTile !== this.state.selectedTile) {
+            this.setState({ selectedTile: this.props.selectedTile })
+        }
     }
 
     render() {
@@ -35,17 +39,21 @@ class Tilemap extends Component {
                         showGrid={this.state.showGrid}
                         tileSize={this.state.tileSize}
                     />
-                    <PlayerLayer
+                    <Layer
                         width={this.state.map_size[0]}
                         height={this.state.map_size[1]}
                         activeLayer={this.state.active_layer}
                         tileSize={this.state.tileSize}
+                        layerType="ground_layer"
+                        selectedTile={this.state.selectedTile}
                     />
-                    <GroundLayer
+                    <Layer
                         width={this.state.map_size[0]}
                         height={this.state.map_size[1]}
                         activeLayer={this.state.active_layer}
                         tileSize={this.state.tileSize}
+                        layerType="player_layer"
+                        selectedTile={this.state.selectedTile}
                     />
                 </div>
             </Fragment>
