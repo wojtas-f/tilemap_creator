@@ -45,6 +45,25 @@
   text-align: start;
 }
 
+.ui__tiles-selection{
+  width: 100%;
+}
+
+.ui__tiles-selection_title{
+  font-size: 1.2rem;
+  font-weight: 400;
+  border-bottom: 1px solid black;
+}
+
+.ui__tiles-selection_tiles-menu{
+  display: flex;
+  flex-wrap: wrap; 
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 5px 0;
+}
+
 
 /* Tilemap */
 
@@ -68,7 +87,8 @@
   display:flex;
   flex-wrap: wrap;
   min-height: 32;
-  position: absolute !important;
+  position: absolute;
+  top: 0;
 }
 
 .grid-layer__tile{
@@ -118,7 +138,7 @@
   position: fixed;
   top:0;
   left: 0;
-  z-index: 11;
+  z-index: 11 !important;
 }
 
 .select-tile__menu{

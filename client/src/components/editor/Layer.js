@@ -15,7 +15,8 @@ class Layer extends Component {
             ground_width: 32,
             active: true,
             tileSize: 32,
-            layerType: props.layerType
+            layerType: props.layerType,
+            selectedTile: props.selectedTile
         }
     }
 
@@ -43,7 +44,13 @@ class Layer extends Component {
             let ground_width = this.props.tileSize * width
             this.setState({ tileSize: this.props.tileSize, ground_width })
         }
+
+        if (this.props.selectedTile !== this.state.selectedTile) {
+            this.setState({ selectedTile: this.props.selectedTile })
+        }
     }
+
+    changeTile = () => {}
 
     render() {
         let tile
@@ -60,6 +67,7 @@ class Layer extends Component {
                     key={tile.id}
                     id={tile.id}
                     tileSize={this.state.tileSize}
+                    selectedTile={this.state.selectedTile}
                 />
             ))
         } else if (this.state.layerType === 'player_layer') {
@@ -69,6 +77,7 @@ class Layer extends Component {
                     key={tile.id}
                     id={tile.id}
                     tileSize={this.state.tileSize}
+                    selectedTile={this.state.selectedTile}
                 />
             ))
         }

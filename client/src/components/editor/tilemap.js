@@ -7,7 +7,8 @@ class Tilemap extends Component {
         map_size: [20, 15],
         showGrid: true,
         active_layer: 'ground_layer',
-        tileSize: 32
+        tileSize: 32,
+        selectedTile: 0
     }
     componentDidUpdate() {
         if (this.props.showGrid !== this.state.showGrid) {
@@ -21,6 +22,10 @@ class Tilemap extends Component {
         if (this.props.tileSize !== this.state.tileSize) {
             console.log('TileSize change')
             this.setState({ tileSize: this.props.tileSize })
+        }
+
+        if (this.props.selectedTile !== this.state.selectedTile) {
+            this.setState({ selectedTile: this.props.selectedTile })
         }
     }
 
@@ -40,6 +45,7 @@ class Tilemap extends Component {
                         activeLayer={this.state.active_layer}
                         tileSize={this.state.tileSize}
                         layerType="ground_layer"
+                        selectedTile={this.state.selectedTile}
                     />
                     <Layer
                         width={this.state.map_size[0]}
@@ -47,6 +53,7 @@ class Tilemap extends Component {
                         activeLayer={this.state.active_layer}
                         tileSize={this.state.tileSize}
                         layerType="player_layer"
+                        selectedTile={this.state.selectedTile}
                     />
                 </div>
             </Fragment>
