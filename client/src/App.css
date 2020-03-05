@@ -111,10 +111,12 @@
 /* MODALS */
 
 .select-tile{
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0,0,0,0.5);
   position: fixed;
+  top:0;
+  left: 0;
   z-index: 11;
 }
 
@@ -122,10 +124,12 @@
   position: fixed;
   top: 30%;
   left: 50%;
+  transform: translateX(-50%);
   background-color: lightgrey;
   padding: 20px;
   border-radius: 15px;
   border: 2px solid black;
+  z-index: 11;
 }
 
 .select-tile__menu_tile{
