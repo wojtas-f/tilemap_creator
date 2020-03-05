@@ -46,6 +46,10 @@ class GroundTile extends Component {
         this.setState({ show_tile_change_window: show })
     }
 
+    closeWindow = () => {
+        this.setState({ show_tile_change_window: false })
+    }
+
     componentDidUpdate() {
         if (this.props.tileSize !== this.state.width) {
             this.setState({
@@ -62,6 +66,7 @@ class GroundTile extends Component {
                 <ChangeTileWindow
                     changeSelectedTile={this.changeTile}
                     tileSet={this.state.tileSet}
+                    closeWindow={this.closeWindow}
                 />
             )
         } else {

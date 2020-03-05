@@ -30,6 +30,9 @@ class PlayerTile extends Component {
         let show = !this.state.show_tile_change_window
         this.setState({ show_tile_change_window: show })
     }
+    closeWindow = () => {
+        this.setState({ show_tile_change_window: false })
+    }
 
     componentDidUpdate() {
         if (this.props.tileSize !== this.state.width) {
@@ -48,6 +51,7 @@ class PlayerTile extends Component {
                 <ChangeTileWindow
                     changeSelectedTile={this.changeTile}
                     tileSet={this.state.tileSet}
+                    closeWindow={this.closeWindow}
                 />
             )
         } else {

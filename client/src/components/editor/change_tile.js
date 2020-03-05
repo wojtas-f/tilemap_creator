@@ -38,6 +38,10 @@ class ChangeTile extends Component {
     selectTile = tile_number => {
         this.props.changeSelectedTile(tile_number)
     }
+    closeWindow = () => {
+        this.props.closeWindow()
+    }
+
     render() {
         let tiles
         if (this.props.tileSet === 'playerTiles') {
@@ -59,6 +63,12 @@ class ChangeTile extends Component {
                                 onClick={() => this.selectTile(tile.id)}
                             />
                         ))}
+                        <div
+                            className="select-tile__menu_x-button"
+                            onClick={this.closeWindow}
+                        >
+                            X
+                        </div>
                     </div>
                 </div>
             </Fragment>

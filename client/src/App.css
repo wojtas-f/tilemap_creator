@@ -139,3 +139,18 @@
   cursor: pointer;
   border: 2px solid rgb(2, 210, 247);
 }
+
+.select-tile__menu_x-button{
+  padding: 10px;
+  background-color: red;
+  max-width: 20px;
+  margin-right: auto;
+  margin-left: auto; 
+  border-radius: 15px;
+}
+
+.select-tile__menu_x-button:hover{
+  background-color: rgb(177, 31, 31);
+  cursor: pointer;
+
+}
