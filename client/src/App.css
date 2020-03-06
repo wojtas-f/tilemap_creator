@@ -1,194 +1,206 @@
+:root {
+    --map-position-top: 50%;
+    --map-position-left: 50%;
+}
+
 .App {
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  overflow-x: hidden;
-  overflow-y: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 /* UI */
 
-.ui{
-  width: 15vw;
-  min-height: 100vh;
-  background-color: lightgrey;
+.ui {
+    width: 15vw;
+    min-height: 100vh;
+    background-color: lightgrey;
 }
 
-.ui__layer-selection_title{
-  font-size: 1.2rem;
-  font-weight: 400;
-  border-bottom: 1px solid black;
+.ui__layer-selection_title {
+    font-size: 1.2rem;
+    font-weight: 400;
+    border-bottom: 1px solid black;
 }
-.ui__layer-selection_list{
-  list-style: none;
-  text-align: start;
-}
-
-.ui__show-grid_title{
-  font-size: 1.2rem;
-  font-weight: 400;
-  border-bottom: 1px solid black;
+.ui__layer-selection_list {
+    list-style: none;
+    text-align: start;
 }
 
-.ui__show-grid_checkbox{
-  text-align: start;
-  padding-left: 40px;
+.ui__show-grid_title {
+    font-size: 1.2rem;
+    font-weight: 400;
+    border-bottom: 1px solid black;
 }
 
-.ui__scale-map_title{
-  font-size: 1.2rem;
-  font-weight: 400;
-  border-bottom: 1px solid black;
+.ui__show-grid_checkbox {
+    text-align: start;
+    padding-left: 40px;
 }
 
-.ui__scale-map_select{
-  text-align: start;
+.ui__scale-map_title {
+    font-size: 1.2rem;
+    font-weight: 400;
+    border-bottom: 1px solid black;
 }
 
-.ui__tiles-selection{
-  width: 100%;
+.ui__scale-map_select {
+    text-align: start;
 }
 
-.ui__tiles-selection_title{
-  font-size: 1.2rem;
-  font-weight: 400;
-  border-bottom: 1px solid black;
+.ui__tiles-selection {
+    width: 100%;
 }
 
-.ui__tiles-selection_tiles-menu{
-  display: flex;
-  flex-wrap: wrap; 
-  max-width: 80%;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 5px 0;
+.ui__tiles-selection_title {
+    font-size: 1.2rem;
+    font-weight: 400;
+    border-bottom: 1px solid black;
 }
 
+.ui__tiles-selection_tiles-menu {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 5px 0;
+}
 
 /* Tilemap */
 
-
-.tile_map{
-  width: 85vw;
-  height: 100vh;
-  background-color: gray;
-  background-image: url('./tiles/background.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 5px solid black;
-  box-sizing: border-box;
-  overflow-x: auto;
-  overflow-y: auto;
-  position: relative;
+.tile_map {
+    width: 85vw;
+    height: 100vh;
+    background-color: gray;
+    background-image: url('./tiles/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 5px solid black;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: auto;
+    position: relative;
 }
 
 /* GRID LAYER */
-.grid-layer{
-  pointer-events:none;
-  opacity: 0.5;
-  z-index: 4;
-  display:flex;
-  flex-wrap: wrap;
-  min-height: 32;
-  position: absolute;
-  top: 0;
+.grid-layer {
+    pointer-events: none;
+    opacity: 0.5;
+    z-index: 4;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 32;
+    position: absolute;
+    top: var(--map-position-top);
+    left: var(--map-position-left);
+    transform: translate(-50%,-50%);
 }
 
-.grid-layer__tile{
-  box-sizing: border-box;
-  border: 1px solid black;
+.grid-layer__tile {
+    box-sizing: border-box;
+    border: 1px solid black;
 }
 
-.overlay-layer{
-  display:flex;
-  flex-wrap: wrap;
-  min-height: 32;
-  position: absolute;
-  top: 0;
-  z-index: 3;
+.overlay-layer {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 32;
+    position: absolute;
+    top: var(--map-position-top);
+    left: var(--map-position-left);
+    transform: translate(-50%,-50%);
+    z-index: 3;
 }
 
 /* PLAYER LAYER */
 
-.player-layer{
-  display:flex;
-  flex-wrap: wrap;
-  min-height: 32;
-  position: absolute;
-  top: 0;
-  z-index: 2;
+.player-layer {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 32;
+    position: absolute;
+    top: var(--map-position-top);
+    left: var(--map-position-left);
+    transform: translate(-50%,-50%);
+    z-index: 2;
 }
 
 /* GRID LAYER */
 
-.ground-layer{
-  display:flex;
-  flex-wrap: wrap;
-  min-height: 32;
-  z-index: 1;
+.ground-layer {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 32;
+    z-index: 1;
+    position: absolute;
+    top: var(--map-position-top);
+    left: var(--map-position-left);
+    transform: translate(-50%,-50%);
 }
 
 /* TILE */
 
-.tile{
-  box-sizing: border-box;
-  width: 32px;
-  height: 32px;
+.tile {
+    box-sizing: border-box;
+    width: 32px;
+    height: 32px;
 }
 
-.tile:hover{
-  cursor: pointer;
-  border: 2px aquamarine outset;
+.tile:hover {
+    cursor: pointer;
+    border: 2px aquamarine outset;
 }
 
 /* MODALS */
 
-.select-tile{
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0,0,0,0.5);
-  position: fixed;
-  top:0;
-  left: 0;
-  z-index: 11 !important;
+.select-tile {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 11 !important;
 }
 
-.select-tile__menu{
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: lightgrey;
-  padding: 20px;
-  border-radius: 15px;
-  border: 2px solid black;
-  z-index: 11;
+.select-tile__menu {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: lightgrey;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid black;
+    z-index: 11;
 }
 
-.select-tile__menu_tile{
-  width: 32px;
-  height: 32px;
-  box-sizing: border-box;
-  border: 1px solid black;
+.select-tile__menu_tile {
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+    border: 1px solid black;
 }
 
-.select-tile__menu_tile:hover{
-  cursor: pointer;
-  border: 2px solid rgb(2, 210, 247);
+.select-tile__menu_tile:hover {
+    cursor: pointer;
+    border: 2px solid rgb(2, 210, 247);
 }
 
-.select-tile__menu_x-button{
-  padding: 10px;
-  background-color: red;
-  max-width: 20px;
-  margin-right: auto;
-  margin-left: auto; 
-  border-radius: 15px;
+.select-tile__menu_x-button {
+    padding: 10px;
+    background-color: red;
+    max-width: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 15px;
 }
 
-.select-tile__menu_x-button:hover{
-  background-color: rgb(177, 31, 31);
-  cursor: pointer;
-
+.select-tile__menu_x-button:hover {
+    background-color: rgb(177, 31, 31);
+    cursor: pointer;
 }
