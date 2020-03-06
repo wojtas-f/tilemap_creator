@@ -70,6 +70,7 @@ class TilesSelection extends Component {
      */
     selectFrame = frameID => {
         this.props.handleTileChange(frameID)
+        this.setState({ selectedTile: frameID })
     }
 
     /**
@@ -104,15 +105,27 @@ class TilesSelection extends Component {
      * @returns {HTML_Element} - a single frame
      */
     renderFrame = frame => {
+        let frameStyle
+        if (frame.id === this.state.selectedTile) {
+            frameStyle = {
+                borderWidth: 2,
+                borderColor: frame.color,
+                borderStyle: 'solid',
+                backgroundColor: `rgba(${193}, ${66}, ${66}, ${0.57})`
+            }
+        } else {
+            frameStyle = {
+                borderWidth: 2,
+                borderColor: frame.color,
+                borderStyle: 'solid'
+            }
+        }
+
         return (
             <div
                 key={frame.id}
                 className="tile"
-                style={{
-                    borderWidth: 2,
-                    borderColor: frame.color,
-                    borderStyle: 'solid'
-                }}
+                style={frameStyle}
                 onClick={() => this.selectFrame(frame.id)}
             ></div>
         )
