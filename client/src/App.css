@@ -16,7 +16,8 @@
 .ui {
     width: 15vw;
     min-height: 100vh;
-    background-color: lightgrey;
+    background: linear-gradient(90deg, rgba(60,38,38,0.8) 0%, rgba(105,76,22,0.8) 52%, rgba(96,47,18,0.8) 100%);
+
 }
 
 .ui__layer-selection_title {
