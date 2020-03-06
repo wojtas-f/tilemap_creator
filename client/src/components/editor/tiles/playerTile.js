@@ -17,8 +17,6 @@ class PlayerTile extends Component {
 
     /**
      * Change tile image or tile frame
-     * If selectedTile parameter >= 100 - change frame
-     * If selectedTile parameter < 100 - change image
      */
     changeTile = () => {
         if (
@@ -41,34 +39,50 @@ class PlayerTile extends Component {
         }
     }
 
+    /**
+     * Render a tile with selected image
+     * @returns {Component} - a single component
+     */
+    renderTile = () => {
+        return (
+            <img
+                src={this.state.tiles_img[this.state.tile]}
+                alt="obstacle"
+                className="tile"
+                onClick={this.changeTile}
+                id={this.props.id}
+                style={{
+                    width: this.state.width,
+                    height: this.state.height
+                }}
+            />
+        )
+    }
+
+    /**
+     * Render a frame with colored border
+     * @returns {HTML_Element} - a single frame
+     */
+    renderFrame = () => {
+        return (
+            <div
+                className="tile"
+                onClick={this.changeTile}
+                style={{
+                    width: this.state.width,
+                    height: this.state.height
+                }}
+            ></div>
+        )
+    }
+
     render() {
         let tile
 
         if (this.state.filled) {
-            tile = (
-                <img
-                    src={this.state.tiles_img[this.state.tile]}
-                    alt="obstacle"
-                    className="tile"
-                    onClick={this.changeTile}
-                    id={this.props.id}
-                    style={{
-                        width: this.state.width,
-                        height: this.state.height
-                    }}
-                />
-            )
+            tile = this.renderTile()
         } else {
-            tile = (
-                <div
-                    className="tile"
-                    onClick={this.changeTile}
-                    style={{
-                        width: this.state.width,
-                        height: this.state.height
-                    }}
-                ></div>
-            )
+            tile = this.renderFrame()
         }
 
         return <React.Fragment>{tile}</React.Fragment>
