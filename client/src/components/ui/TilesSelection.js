@@ -35,10 +35,10 @@ class TilesSelection extends Component {
             { name: tree_2, id: 2 }
         ],
         frames: [
-            { color: 'none', id: 100 },
-            { color: 'red', id: 101 },
-            { color: 'aqua', id: 102 },
-            { color: 'lime', id: 103 }
+            { color: 'none', id: 0 },
+            { color: 'red', id: 1 },
+            { color: 'aqua', id: 2 },
+            { color: 'lime', id: 3 }
         ],
         activeLayer: 'ground_layer'
     }
@@ -62,10 +62,13 @@ class TilesSelection extends Component {
         if (this.state.activeLayer === 'player_layer') {
             console.log('Player tile tiles')
             tiles = this.state.playerTiles
-            colorFrames = this.state.frames
+            colorFrames = null
         } else if (this.state.activeLayer === 'ground_layer') {
             tiles = this.state.groundTiles
             colorFrames = null
+        } else if (this.state.activeLayer === 'overlay_layer') {
+            tiles = null
+            colorFrames = this.state.frames
         }
 
         return (
@@ -73,31 +76,37 @@ class TilesSelection extends Component {
                 <div className="ui__tiles-selection">
                     <p className="ui__tiles-selection_title">Select Tile</p>
                     <div className="ui__tiles-selection_tiles-menu">
-                        {tiles.map(tile => (
-                            <img
-                                key={tile.id}
-                                src={tile.name}
-                                alt="empty"
-                                className="select-tile__menu_tile"
-                                onClick={() => this.selectTile(tile.id)}
-                            />
-                        ))}
+                        {tiles ? (
+                            tiles.map(tile => (
+                                <img
+                                    key={tile.id}
+                                    src={tile.name}
+                                    alt="empty"
+                                    className="select-tile__menu_tile"
+                                    onClick={() => this.selectTile(tile.id)}
+                                />
+                            ))
+                        ) : (
+                            <br />
+                        )}
                     </div>
                     <div className="ui__tiles-selection_tiles-menu">
-                        {colorFrames
-                            ? colorFrames.map(item => (
-                                  <div
-                                      key={item.id}
-                                      className="tile"
-                                      style={{
-                                          borderWidth: 2,
-                                          borderColor: item.color,
-                                          borderStyle: 'solid'
-                                      }}
-                                      onClick={() => this.selectFrame(item.id)}
-                                  ></div>
-                              ))
-                            : 'Tiles...'}
+                        {colorFrames ? (
+                            colorFrames.map(item => (
+                                <div
+                                    key={item.id}
+                                    className="tile"
+                                    style={{
+                                        borderWidth: 2,
+                                        borderColor: item.color,
+                                        borderStyle: 'solid'
+                                    }}
+                                    onClick={() => this.selectFrame(item.id)}
+                                ></div>
+                            ))
+                        ) : (
+                            <br />
+                        )}
                     </div>
                 </div>
             </Fragment>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import GroundTile from './tiles/groundTile'
 import PlayerTile from './tiles/playerTile'
+import OverlayTile from './tiles/overlayTile'
 
 import {
     createArrayOfTiles,
@@ -74,6 +75,16 @@ class Layer extends Component {
             layerStyle = 'player-layer'
             tile = this.state.tiles.map(tile => (
                 <PlayerTile
+                    key={tile.id}
+                    id={tile.id}
+                    tileSize={this.state.tileSize}
+                    selectedTile={this.state.selectedTile}
+                />
+            ))
+        } else if (this.state.layerType === 'overlay_layer') {
+            layerStyle = 'overlay-layer'
+            tile = this.state.tiles.map(tile => (
+                <OverlayTile
                     key={tile.id}
                     id={tile.id}
                     tileSize={this.state.tileSize}

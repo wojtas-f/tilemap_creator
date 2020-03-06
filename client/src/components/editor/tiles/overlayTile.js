@@ -1,15 +1,9 @@
 import React, { Component } from 'react'
 
-import obstacle_1 from '../../../tiles/obstacle_1.png'
-import tree_1 from '../../../tiles/tree.png'
-import tree_2 from '../../../tiles/tree_2.png'
-
-class PlayerTile extends Component {
+class OverlayTile extends Component {
     state = {
-        tiles_img: [obstacle_1, tree_1, tree_2],
+        tiles: ['none', 'red', 'aqua', 'lime'],
         tile: 0,
-        filled: false,
-        tileSet: 'playerTiles',
         width: 32,
         height: 32,
         selectedTile: 0
@@ -43,27 +37,32 @@ class PlayerTile extends Component {
 
     render() {
         let tile
-
-        if (this.state.filled) {
-            tile = (
-                <img
-                    src={this.state.tiles_img[this.state.tile]}
-                    alt="obstacle"
-                    className="tile"
-                    onClick={this.changeTile}
-                    id={this.props.id}
-                    style={{
-                        width: this.state.width,
-                        height: this.state.height
-                    }}
-                />
-            )
+        let frameStyle
+        if (this.state.tile === 0) {
+            frameStyle = {
+                width: this.state.width,
+                height: this.state.height
+            }
         } else {
-            tile = <div className="tile" onClick={this.changeTile}></div>
+            frameStyle = {
+                width: this.state.width,
+                height: this.state.height,
+                borderWidth: 2,
+                borderColor: this.state.tiles[this.state.tile],
+                borderStyle: 'solid'
+            }
         }
+
+        tile = (
+            <div
+                className="tile"
+                onClick={this.changeTile}
+                style={frameStyle}
+            ></div>
+        )
 
         return <React.Fragment>{tile}</React.Fragment>
     }
 }
 
-export default PlayerTile
+export default OverlayTile
