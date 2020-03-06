@@ -59,7 +59,16 @@ class PlayerTile extends Component {
                 />
             )
         } else {
-            tile = <div className="tile" onClick={this.changeTile}></div>
+            tile = (
+                <div
+                    className="tile"
+                    onClick={this.changeTile}
+                    style={{
+                        width: this.state.width,
+                        height: this.state.height
+                    }}
+                ></div>
+            )
         }
 
         return <React.Fragment>{tile}</React.Fragment>
