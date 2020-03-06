@@ -15,6 +15,9 @@ import obstacle_1 from '../../tiles/obstacle_1.png'
 import tree_1 from '../../tiles/tree.png'
 import tree_2 from '../../tiles/tree_2.png'
 
+/**
+ * Select the tile that will be used to change the appearance of map tiles
+ */
 class TilesSelection extends Component {
     state = {
         groundTiles: [

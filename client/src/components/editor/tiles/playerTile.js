@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 
 import obstacle_1 from '../../../tiles/obstacle_1.png'
 import tree_1 from '../../../tiles/tree.png'
@@ -15,18 +15,6 @@ class PlayerTile extends Component {
         selectedTile: 0
     }
 
-    /**
-     * Change tile image or tile frame
-     */
-    changeTile = () => {
-        if (
-            this.state.tile !== this.state.selectedTile ||
-            this.state.filled === false
-        ) {
-            this.setState({ tile: this.state.selectedTile, filled: true })
-        }
-    }
-
     componentDidUpdate() {
         if (this.props.tileSize !== this.state.width) {
             this.setState({
@@ -36,6 +24,18 @@ class PlayerTile extends Component {
         }
         if (this.props.selectedTile !== this.state.selectedTile) {
             this.setState({ selectedTile: this.props.selectedTile })
+        }
+    }
+
+    /**
+     * Change tile image or tile frame
+     */
+    changeTile = () => {
+        if (
+            this.state.tile !== this.state.selectedTile ||
+            this.state.filled === false
+        ) {
+            this.setState({ tile: this.state.selectedTile, filled: true })
         }
     }
 
@@ -78,14 +78,13 @@ class PlayerTile extends Component {
 
     render() {
         let tile
-
         if (this.state.filled) {
             tile = this.renderTile()
         } else {
             tile = this.renderFrame()
         }
 
-        return <React.Fragment>{tile}</React.Fragment>
+        return <Fragment>{tile}</Fragment>
     }
 }
 

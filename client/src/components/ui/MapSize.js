@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+/**
+ * Control the size on the map (width and height is counted with tiles)
+ */
 class MapSize extends Component {
     state = {
         width: 20,
@@ -23,7 +26,7 @@ class MapSize extends Component {
                             type="text"
                             name="width"
                             className="ui__map-size_label_input"
-                        />{' '}
+                        />
                         tiles
                     </label>
                     <label className="ui__map-size_label">
@@ -32,7 +35,7 @@ class MapSize extends Component {
                             type="text"
                             name="height"
                             className="ui__map-size_label_input"
-                        />{' '}
+                        />
                         tiles
                     </label>
 
