@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import GroundTile from './groundTile'
-import PlayerTile from './playerTile'
+import GroundTile from './tiles/groundTile'
+import PlayerTile from './tiles/playerTile'
 
 import {
     createArrayOfTiles,

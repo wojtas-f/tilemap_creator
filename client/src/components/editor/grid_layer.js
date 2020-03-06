@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import GridTile from './gridTile'
+import GridTile from './tiles/gridTile'
 
 import { createArrayOfTiles } from '../../helpers/layers_helper'
 

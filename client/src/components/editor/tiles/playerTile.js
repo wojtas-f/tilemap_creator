@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-import obstacle_1 from '../../tiles/obstacle_1.png'
-import tree_1 from '../../tiles/tree.png'
-import tree_2 from '../../tiles/tree_2.png'
+import obstacle_1 from '../../../tiles/obstacle_1.png'
+import tree_1 from '../../../tiles/tree.png'
+import tree_2 from '../../../tiles/tree_2.png'
 
 class PlayerTile extends Component {
     state = {
