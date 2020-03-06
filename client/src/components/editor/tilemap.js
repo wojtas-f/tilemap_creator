@@ -4,7 +4,7 @@ import Layer from './Layer'
 
 class Tilemap extends Component {
     state = {
-        map_size: [20, 15],
+        map_size: [20, 20],
         showGrid: true,
         active_layer: 'ground_layer',
         tileSize: 32,
