@@ -39,13 +39,9 @@ class TilesSelection extends Component {
         ],
         frames: [
             { name: 'none', id: 0 },
-            { name: 'text', id: 1 },
-            { name: 'aqua', id: 2 },
-            { name: 'lime', id: 3 },
-            {
-                name: 'red',
-                id: 4
-            }
+            { name: 'aqua', id: 1 },
+            { name: 'lime', id: 2 },
+            { name: 'red', id: 3 }
         ],
         activeLayer: 'ground_layer',
         selectedTile: 0
