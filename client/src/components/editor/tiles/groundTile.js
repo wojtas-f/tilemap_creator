@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import grass_1 from '../../tiles/grass_1.png'
-import grass_2 from '../../tiles/grass_2.png'
-import grass_3 from '../../tiles/grass_3.png'
-import grass_4 from '../../tiles/grass_4.png'
-import road_1 from '../../tiles/road_h_left-end.png'
-import road_2 from '../../tiles/road_h.png'
-import road_3 from '../../tiles/road_h_right-end.png'
-import road_4 from '../../tiles/road_v_top-end.png'
-import road_5 from '../../tiles/road_v.png'
-import road_6 from '../../tiles/road_v_bottom-end.png'
+import grass_1 from '../../../tiles/grass_1.png'
+import grass_2 from '../../../tiles/grass_2.png'
+import grass_3 from '../../../tiles/grass_3.png'
+import grass_4 from '../../../tiles/grass_4.png'
+import road_1 from '../../../tiles/road_h_left-end.png'
+import road_2 from '../../../tiles/road_h.png'
+import road_3 from '../../../tiles/road_h_right-end.png'
+import road_4 from '../../../tiles/road_v_top-end.png'
+import road_5 from '../../../tiles/road_v.png'
+import road_6 from '../../../tiles/road_v_bottom-end.png'
 
 class GroundTile extends Component {
     state = {
@@ -31,12 +31,6 @@ class GroundTile extends Component {
         selectedTile: 0
     }
 
-    changeTile = () => {
-        if (this.state.tile !== this.state.selectedTile) {
-            this.setState({ tile: this.state.selectedTile })
-        }
-    }
-
     componentDidUpdate() {
         if (this.props.tileSize !== this.state.width) {
             this.setState({
@@ -44,8 +38,20 @@ class GroundTile extends Component {
                 height: this.props.tileSize
             })
         }
-        if (this.props.selectedTile !== this.state.selectedTile) {
+        if (
+            this.props.selectedTile !== this.state.selectedTile &&
+            this.props.selectedTile < 100
+        ) {
             this.setState({ selectedTile: this.props.selectedTile })
+        }
+    }
+
+    /**
+     * Change the image of current tile to the image selected in Tile Selection component
+     */
+    changeTile = () => {
+        if (this.state.tile !== this.state.selectedTile) {
+            this.setState({ tile: this.state.selectedTile })
         }
     }
 

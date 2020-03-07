@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
-class ScaleMap extends Component {
+/**
+ *  Select tile size
+ */
+class TileSize extends Component {
     state = {
         tileSize: 32
     }
@@ -33,4 +36,4 @@ class ScaleMap extends Component {
     }
 }
 
-export default ScaleMap
+export default TileSize

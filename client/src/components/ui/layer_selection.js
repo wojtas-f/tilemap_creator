@@ -7,7 +7,6 @@ class LayerSelection extends Component {
 
     handleChange = event => {
         const active_layer = event.target.value
-        //console.log(`Active layer: ${active_layer}`)
 
         this.setState({
             active_layer

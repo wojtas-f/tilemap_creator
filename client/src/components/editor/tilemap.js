@@ -4,7 +4,7 @@ import Layer from './Layer'
 
 class Tilemap extends Component {
     state = {
-        map_size: [20, 15],
+        map_size: [20, 20],
         showGrid: true,
         active_layer: 'ground_layer',
         tileSize: 32,
@@ -44,7 +44,7 @@ class Tilemap extends Component {
                         height={this.state.map_size[1]}
                         activeLayer={this.state.active_layer}
                         tileSize={this.state.tileSize}
-                        layerType="ground_layer"
+                        layerType="overlay_layer"
                         selectedTile={this.state.selectedTile}
                     />
                     <Layer
@@ -53,6 +53,14 @@ class Tilemap extends Component {
                         activeLayer={this.state.active_layer}
                         tileSize={this.state.tileSize}
                         layerType="player_layer"
+                        selectedTile={this.state.selectedTile}
+                    />
+                    <Layer
+                        width={this.state.map_size[0]}
+                        height={this.state.map_size[1]}
+                        activeLayer={this.state.active_layer}
+                        tileSize={this.state.tileSize}
+                        layerType="ground_layer"
                         selectedTile={this.state.selectedTile}
                     />
                 </div>

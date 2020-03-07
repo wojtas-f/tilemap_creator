@@ -3,6 +3,9 @@ import React, { Component } from 'react'
 import Tilemap from './editor/tilemap'
 import UI from './ui/ui'
 
+/**
+ * Root element for map editor and UI
+ */
 class Editor extends Component {
     state = {
         showGrid: true,
