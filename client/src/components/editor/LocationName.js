@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class LocationNames extends Component {
+class LocationName extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -11,6 +11,7 @@ class LocationNames extends Component {
     componentDidUpdate() {
         if (this.props.title !== this.state.title) {
             this.setState({ title: this.props.title })
+            console.log('xxxx')
         }
     }
 
@@ -24,4 +25,4 @@ class LocationNames extends Component {
     }
 }
 
-export default LocationNames
+export default LocationName

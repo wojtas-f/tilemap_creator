@@ -124,7 +124,7 @@
 .grid-layer {
     pointer-events: none;
     opacity: 0.3;
-    z-index: 4;
+    z-index: 3;
     display: flex;
     flex-wrap: wrap;
     min-height: 32;
@@ -147,7 +147,7 @@
     top: var(--map-position-top);
     left: var(--map-position-left);
     transform: translate(-50%,-50%);
-    z-index: 3;
+    z-index: 4;
 }
 
 .location-name{
@@ -171,6 +171,20 @@
     font-family: 'Trade Winds', cursive;
     text-align: center;
     width: fit-content;
+}
+
+.add-location{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 /* PLAYER LAYER */
