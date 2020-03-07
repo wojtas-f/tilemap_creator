@@ -150,6 +150,29 @@
     z-index: 3;
 }
 
+.location-name{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-75%);
+}
+
+.location-name__dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+    
+}
+
+.location-name__title{
+    font-family: 'Trade Winds', cursive;
+    text-align: center;
+    width: fit-content;
+}
+
 /* PLAYER LAYER */
 
 .player-layer {

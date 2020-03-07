@@ -31,12 +31,6 @@ class GroundTile extends Component {
         selectedTile: 0
     }
 
-    changeTile = () => {
-        if (this.state.tile !== this.state.selectedTile) {
-            this.setState({ tile: this.state.selectedTile })
-        }
-    }
-
     componentDidUpdate() {
         if (this.props.tileSize !== this.state.width) {
             this.setState({
@@ -49,6 +43,15 @@ class GroundTile extends Component {
             this.props.selectedTile < 100
         ) {
             this.setState({ selectedTile: this.props.selectedTile })
+        }
+    }
+
+    /**
+     * Change the image of current tile to the image selected in Tile Selection component
+     */
+    changeTile = () => {
+        if (this.state.tile !== this.state.selectedTile) {
+            this.setState({ tile: this.state.selectedTile })
         }
     }
 

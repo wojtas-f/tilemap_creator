@@ -28,7 +28,7 @@ class PlayerTile extends Component {
     }
 
     /**
-     * Change tile image or tile frame
+     * Change tile image or tile frame to the image/frame selected in Tile Selection component
      */
     changeTile = () => {
         if (

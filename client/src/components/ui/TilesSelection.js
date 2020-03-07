@@ -38,10 +38,14 @@ class TilesSelection extends Component {
             { name: tree_2, id: 2 }
         ],
         frames: [
-            { color: 'none', id: 0 },
-            { color: 'red', id: 1 },
-            { color: 'aqua', id: 2 },
-            { color: 'lime', id: 3 }
+            { name: 'none', id: 0 },
+            { name: 'text', id: 1 },
+            { name: 'aqua', id: 2 },
+            { name: 'lime', id: 3 },
+            {
+                name: 'red',
+                id: 4
+            }
         ],
         activeLayer: 'ground_layer',
         selectedTile: 0
@@ -109,14 +113,14 @@ class TilesSelection extends Component {
         if (frame.id === this.state.selectedTile) {
             frameStyle = {
                 borderWidth: 2,
-                borderColor: frame.color,
+                borderColor: frame.name,
                 borderStyle: 'solid',
                 backgroundColor: `rgba(${193}, ${66}, ${66}, ${0.57})`
             }
         } else {
             frameStyle = {
                 borderWidth: 2,
-                borderColor: frame.color,
+                borderColor: frame.name,
                 borderStyle: 'solid'
             }
         }

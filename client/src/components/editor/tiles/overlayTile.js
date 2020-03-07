@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 
+import LocationNames from '../modals/LocationNames'
+
 class OverlayTile extends Component {
     state = {
-        tiles: ['none', 'red', 'aqua', 'lime'],
+        tiles: ['none', 'title', 'aqua', 'lime', 'red'],
         tile: 0,
         width: 32,
         height: 32,
-        selectedTile: 0
+        selectedTile: 0,
+        title: 'Dark Woods'
     }
 
     /**
@@ -38,11 +41,19 @@ class OverlayTile extends Component {
     render() {
         let tile
         let frameStyle
+        let title
         if (this.state.tile === 0) {
             frameStyle = {
                 width: this.state.width,
                 height: this.state.height
             }
+            title = null
+        } else if (this.state.tile === 1) {
+            frameStyle = {
+                width: this.state.width,
+                height: this.state.height
+            }
+            title = this.state.title
         } else {
             frameStyle = {
                 width: this.state.width,
@@ -51,14 +62,17 @@ class OverlayTile extends Component {
                 borderColor: this.state.tiles[this.state.tile],
                 borderStyle: 'solid'
             }
+            title = null
         }
 
         tile = (
             <div
-                className="tile"
+                className="tile overlay-layer_tile"
                 onClick={this.changeTile}
                 style={frameStyle}
-            ></div>
+            >
+                {title ? <LocationNames title={this.state.title} /> : ''}
+            </div>
         )
 
         return <React.Fragment>{tile}</React.Fragment>

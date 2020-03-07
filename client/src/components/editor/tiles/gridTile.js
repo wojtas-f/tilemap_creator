@@ -13,6 +13,7 @@ class GridTile extends Component {
             })
         }
     }
+
     render() {
         return (
             <React.Fragment>
