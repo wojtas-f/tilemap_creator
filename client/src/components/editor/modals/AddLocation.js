@@ -22,22 +22,28 @@ class AddLocation extends Component {
     render() {
         return (
             <div className="add-location">
-                <form onSubmit={this.handleChange}>
+                <form
+                    onSubmit={this.handleChange}
+                    className="add-location_form"
+                >
                     {this.state.errorMessage ? (
-                        <div className="add-location_error">
+                        <div className="add-location_form_error">
                             {this.state.errorMessage}
                         </div>
                     ) : (
                         ''
                     )}
-                    <label>
-                        <input
-                            type="text"
-                            name="locationName"
-                            placeholder="Enter location name"
-                        />
-                    </label>
-                    <button type="submit">Save</button>
+
+                    <input
+                        type="text"
+                        name="locationName"
+                        placeholder="Enter location name"
+                        className="add-location_form_input"
+                    />
+
+                    <button type="submit" className="add-location_form_button">
+                        Save
+                    </button>
                 </form>
             </div>
         )

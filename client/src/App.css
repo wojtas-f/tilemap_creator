@@ -187,6 +187,25 @@
     left: 0;
 }
 
+.add-location_form{
+    padding: 20px;
+    background-color: lightgray;
+    border: 5px solid black;
+}
+.add-location_form_input{
+    padding: 10px;
+}
+.add-location_form_button{
+    padding: 10px;
+    color: white;
+    background-color: rgb(4, 61, 4);
+}
+
+.add-location_form_button:hover{
+    background-color: rgb(16, 150, 16);
+    cursor: pointer;
+}
+
 /* PLAYER LAYER */
 
 .player-layer {
