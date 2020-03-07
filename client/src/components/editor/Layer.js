@@ -51,8 +51,6 @@ class Layer extends Component {
         }
     }
 
-    changeTile = () => {}
-
     render() {
         let tile
         let layerStyle

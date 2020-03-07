@@ -32,16 +32,24 @@ class GridLayer extends Component {
         }
     }
 
+    /**
+     * @param {object} tile - a single grid tile from tiles array
+     * @returns {Component} - grid tile React Component
+     */
+    renderGridTile = tile => {
+        return (
+            <GridTile
+                key={tile.id}
+                id={tile.id}
+                tileSize={this.state.tileSize}
+            />
+        )
+    }
+
     render() {
         let grid
         if (this.state.showGrid) {
-            grid = this.state.tiles.map(tile => (
-                <GridTile
-                    key={tile.id}
-                    id={tile.id}
-                    tileSize={this.state.tileSize}
-                />
-            ))
+            grid = this.state.tiles.map(this.renderGridTile)
         } else {
             grid = null
         }
