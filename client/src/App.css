@@ -3,12 +3,97 @@
     --map-position-left: 50%;
 }
 
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
 .App {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.Editor{
     display: flex;
     flex-direction: row;
     overflow-x: hidden;
     overflow-y: hidden;
+}
+
+/* TopBar */
+
+.top-bar{
+    height: 5vh;
+    border-bottom: 5px solid black;
+
+}
+
+.top-bar__btn-group{
+    display: flex;
+    width: fit-content;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 5vh;
+    align-items: center;
+    background-color: grey;
+}
+
+.top-bar__btn-group_btn{
+    width: fit-content;
+    padding: 5px 15px;
+}
+.top-bar__btn-group_btn:hover{
+    background-color: red;
+    cursor: pointer;
+}
+
+.show-help{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: visible!important;
+
+}
+
+
+.show-help__list{
+    list-style-type: square;
+}
+
+.show-help__list_item_link{
+    text-decoration: none;
+    color: white;
+}
+
+.show-help__list_item_link:hover{
+    cursor: pointer;
+    color: aqua;
+}
+
+.show-help__line{
+    width: 90%;
+    margin: 20px 0;
+}
+
+.show-help__article{
+    width: 50%;
+    text-align: left !important;
+}
+.show-help__article_title{
+    font-size: 2.4rem;
+}
+
+.show-help__article_image{
+    width: 200px;
+    height: auto;
 }
 
 /* UI */

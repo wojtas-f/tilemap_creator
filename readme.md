@@ -44,5 +44,5 @@ Simple grid to show how the map is divided. You have an option to turn off the g
 ## Build With
 
 * React.js
-* Node.js
+* Node.js / Express.js
 * CSS

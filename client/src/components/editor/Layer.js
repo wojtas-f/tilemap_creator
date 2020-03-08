@@ -11,21 +11,16 @@ import {
 class Layer extends Component {
     constructor(props) {
         super(props)
+        let tiles = createArrayOfTiles(props.width, props.height)
+        let ground_width = props.tileSize * props.width
         this.state = {
-            tiles: [],
-            ground_width: 32,
+            tiles: tiles,
+            ground_width: ground_width,
             active: true,
             tileSize: 32,
             layerType: props.layerType,
             selectedTile: props.selectedTile
         }
-    }
-
-    componentDidMount() {
-        const { height, width } = this.props
-        let tiles = createArrayOfTiles(width, height)
-        let ground_width = this.state.tileSize * width
-        this.setState({ tiles, ground_width })
     }
 
     componentDidUpdate() {
@@ -46,9 +41,9 @@ class Layer extends Component {
             this.setState({ tileSize: this.props.tileSize, ground_width })
         }
 
-        if (this.props.selectedTile !== this.state.selectedTile) {
-            this.setState({ selectedTile: this.props.selectedTile })
-        }
+        // if (this.props.selectedTile !== this.state.selectedTile) {
+        //     this.setState({ selectedTile: this.props.selectedTile })
+        // }
     }
 
     render() {
@@ -66,7 +61,7 @@ class Layer extends Component {
                     key={tile.id}
                     id={tile.id}
                     tileSize={this.state.tileSize}
-                    selectedTile={this.state.selectedTile}
+                    selectedTile={this.props.selectedTile}
                 />
             ))
         } else if (this.state.layerType === 'player_layer') {
@@ -76,7 +71,7 @@ class Layer extends Component {
                     key={tile.id}
                     id={tile.id}
                     tileSize={this.state.tileSize}
-                    selectedTile={this.state.selectedTile}
+                    selectedTile={this.props.selectedTile}
                 />
             ))
         } else if (this.state.layerType === 'overlay_layer') {
@@ -86,7 +81,7 @@ class Layer extends Component {
                     key={tile.id}
                     id={tile.id}
                     tileSize={this.state.tileSize}
-                    selectedTile={this.state.selectedTile}
+                    selectedTile={this.props.selectedTile}
                 />
             ))
         }

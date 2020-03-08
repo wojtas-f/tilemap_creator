@@ -10,7 +10,8 @@ class Editor extends Component {
     state = {
         showGrid: true,
         active_layer: 'ground_layer',
-        selectedTile: 0
+        selectedTile: 0,
+        tileSize: 32
     }
 
     handleGridOpacityChange = show => {
@@ -23,22 +24,19 @@ class Editor extends Component {
         if (this.state.active_layer !== active_layer) {
             this.setState({ active_layer: active_layer })
         }
-        console.log('Active layer: ', active_layer)
     }
 
     handleMapScaling = tileSize => {
-        console.log(`tileSize: ${tileSize}`)
         this.setState({ tileSize })
     }
 
     handleTileChange = selectedTile => {
-        console.log('Selected tile: ', selectedTile)
         this.setState({ selectedTile })
     }
 
     render() {
         return (
-            <div className="App">
+            <div className="Editor">
                 <UI
                     handleGridOpacityChange={this.handleGridOpacityChange}
                     handleLayerChange={this.handleLayerChange}
