@@ -2,6 +2,7 @@ const path = require('path')
 
 const express = require('express')
 const hbs = require('hbs')
+const cors = require('cors')
 
 const app = express()
 
@@ -10,6 +11,8 @@ const PagesRouter = require('./routes/pages')
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewPath = path.join(__dirname, '../templates/views')
 const partialPath = path.join(__dirname, '../templates/partials')
+
+app.use(cors())
 
 app.set('view engine', 'hbs')
 app.set('views', viewPath)
