@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 import Tilemap from './editor/tilemap'
 import UI from './ui/ui'
-import ShowHelp from './help/ShowHelp'
 
 /**
  * Root element for map editor and UI
@@ -12,7 +11,6 @@ class Editor extends Component {
         showGrid: true,
         active_layer: 'ground_layer',
         selectedTile: 0,
-        showHelpMenu: false,
         tileSize: 32
     }
 
@@ -37,15 +35,8 @@ class Editor extends Component {
     }
 
     render() {
-        let menu
-        if (this.state.showHelpMenu) {
-            menu = <ShowHelp />
-        } else {
-            menu = null
-        }
         return (
-            <div className="App">
-                {menu}
+            <div className="Editor">
                 <UI
                     handleGridOpacityChange={this.handleGridOpacityChange}
                     handleLayerChange={this.handleLayerChange}
