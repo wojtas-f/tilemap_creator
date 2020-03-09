@@ -35,41 +35,59 @@ hr{
     border-right: 1px solid black;
 }
 
+
+.navbar__title{
+    font-family: 'Trade Winds', cursive;
+    font-size: 2.5rem;
+}
+
+
+.navbar__list{
+    list-style-type: disc;
+}
+
+.navbar__list_item{
+    border-bottom: black dotted 1px;
+    padding: 5px;
+    margin: 10px 0;
+}
+
+.navbar__list_item:hover{
+    cursor: pointer;
+    color: orangered;
+}
+
+.navbar__list_item_link{
+    text-decoration: none;
+    color:  inherit;
+
+}
+
+
+
+/* ARTICLES */
+
 .articles{
     width: 70%;
     padding-left: 40px;
     overflow-y: auto;
 }
 
-
-.main__list{
-    list-style-type: square;
-}
-
-.main__list_item_link{
-    text-decoration: none;
-    color:  black;
-}
-
-.main__list_item_link:hover{
-    cursor: pointer;
-    color: aqua;
-}
-
-.main__line{
-    width: 90%;
-    margin: 20px 0;
-}
-
-.main__article{
+.articles__section{
     width: 50%;
     text-align: left !important;
 }
-.main__article_title{
+.articles__section_title{
     font-size: 2.4rem;
+    font-family: 'Trade Winds', cursive;
 }
 
-.main__article_image{
+.articles__section_image{
     width: 200px;
     height: auto;
+}
+
+.articles__line{
+    width: 90%;
+    margin: 20px 0;
 }
