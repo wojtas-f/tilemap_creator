@@ -4,76 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TileMap Editor - Tutorial</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div class="show-help">
-        <div class="show-help__article">
-            <h1 class="show-help__article_title">How to:</h1>
-            <ul class="show-help__list">
-                <li>
-                    <a href="#1" class="show-help__list_item_link">
-                        change tile
-                    </a>
-                </li>
-                <li>
-                    <a href="#2" class="show-help__list_item_link">
-                        set location name
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-        <hr class="show-help__line" />
-
-        <div class="show-help__article" id="1">
-            <h3 class="show-help__article_title">
-                How to change the tile
-            </h3>
-            <p>
-                First, select the image from "Select Tile" menu on the
-                left side of the screen
-            </p>
-            <img
-                src=
-                alt="Tile selection menu"
-                class="show-help__article_image"
-            />
-            <p>
-                In the next step, left click on the tile you want to
-                change.
-            </p>
-            <img
-                src=
-                alt="Editor fragment"
-                class="show-help__article_image"
-            />
-        </div>
-
-        <hr class="show-help__line" />
-
-        <div class="show-help__article" id="2">
-            <h3 class="show-help__article_title">
-                Set location name
-            </h3>
-            <p>
-                Switch to the overlay layer and right click on the tile
-                in the place you want to matk on the map.
-            </p>
-            <img
-                src=
-                alt="Layer selection menu"
-                class="show-help__article_image"
-            />
-            <p>
-                In the next step, left click on the tile you want to
-                change.
-            </p>
-            <img
-                src=
-                alt="Location name input"
-                class="show-help__article_image"
-            />
-        </div>
+    {{>header}}
+    <hr>
+    <div class="main">
+        {{>navbar}}
+        {{>articles}}
     </div>
+    
+    
 </body>
 </html>
