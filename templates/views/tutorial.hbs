@@ -7,74 +7,13 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    {{>header}}
+    <hr>
     <div class="main">
-        <div class="main__article">
-            <h1 class="main__article_title">How to:</h1>
-            <ul class="main__list">
-                <li>
-                    <a href="#1" class="main__list_item_link">
-                        change tile
-                    </a>
-                </li>
-                <li>
-                    <a href="#2" class="main__list_item_link">
-                        set location name
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-        <hr class="main__line" />
-
-        <div class="main__article" id="1">
-            <h3 class="main__article_title">
-                How to change the tile
-            </h3>
-            <p>
-                First, select the image from "Select Tile" menu on the
-                left side of the screen
-            </p>
-            <img
-                src="/img/select-tile.png"
-                alt="Tile selection menu"
-                class="main__article_image"
-            />
-            <p>
-                In the next step, left click on the tile you want to
-                change.
-            </p>
-            <img
-                src="/img/change-tile.png"
-                alt="Editor fragment"
-                class="main__article_image"
-            />
-        </div>
-
-        <hr class="main__line" />
-
-        <div class="main__article" id="2">
-            <h3 class="main__article_title">
-                Set location name
-            </h3>
-            <p>
-                Switch to the overlay layer and right click on the tile
-                in the place you want to matk on the map.
-            </p>
-            <img
-                src="/img/select-layer.png"
-                alt="Layer selection menu"
-                class="main__article_image"
-            />
-            <p>
-                In the next step, left click on the tile you want to
-                change.
-            </p>
-            <img
-                src="/img/set-location.png"
-                alt="Location name input"
-                class="main__article_image"
-            />
-        </div>
+        {{>navbar}}
+        {{>articles}}
     </div>
+    
+    
 </body>
 </html>
