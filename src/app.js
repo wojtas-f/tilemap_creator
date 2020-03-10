@@ -8,7 +8,8 @@ const app = express()
 
 const PagesRouter = require('./routes/pages')
 
-const publicDirectoryPath = path.join(__dirname, '../public')
+const publicServerDirectoryPath = path.join(__dirname, '../public')
+//const publicClientDirectoryPath = path.join(__dirname, '../client/public')
 const viewPath = path.join(__dirname, '../templates/views')
 const partialPath = path.join(__dirname, '../templates/partials')
 
@@ -18,7 +19,9 @@ app.set('view engine', 'hbs')
 app.set('views', viewPath)
 hbs.registerPartials(partialPath)
 
-app.use(express.static(publicDirectoryPath))
+// app.use('/tutorial',express.static(publicServerDirectoryPath))
+app.use(express.static(publicServerDirectoryPath))
+// app.use(express.static(publicClientDirectoryPath))
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))

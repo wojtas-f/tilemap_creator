@@ -43,6 +43,10 @@ class UI extends Component {
                     handleTileChange={this.handleTileChange}
                     activeLayer={this.state.activeLayer}
                 />
+
+                <a href="localhost:5000/tutorial" target="_blank">
+                    Get help
+                </a>
             </div>
         )
     }
