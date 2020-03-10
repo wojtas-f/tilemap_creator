@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Map editor for creating tile maps",
   "main": "server.js",
+  "engines":{
+    "node": "12.14.1"
+  },
   "scripts": {
     "start": "node server.js",
     "server-dev": "nodemon server.js -e js,css,hbs",
