@@ -9,7 +9,7 @@ const app = express()
 const PagesRouter = require('./src/routes/pages')
 
 const publicServerDirectoryPath = path.join(__dirname, '../public')
-const publicClientDirectoryPath = path.join(__dirname, '../client/public')
+// const publicClientDirectoryPath = path.join(__dirname, '../client/public')
 const viewPath = path.join(__dirname, '../templates/views')
 const partialPath = path.join(__dirname, '../templates/partials')
 
@@ -24,10 +24,11 @@ app.use(express.static(publicServerDirectoryPath))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.use(PagesRouter)
-
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
 })
+app.use(PagesRouter)
+
+
 
 module.exports = app
