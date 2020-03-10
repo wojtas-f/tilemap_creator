@@ -10,7 +10,6 @@ const PagesRouter = require('./src/routes/pages')
 
 const publicServerDirectoryPath = path.join(__dirname, './public')
 const root = path.join(__dirname, 'client', 'build')
-// const publicClientDirectoryPath = path.join(__dirname, '../client/public')
 const viewPath = path.join(__dirname, './templates/views')
 const partialPath = path.join(__dirname, './templates/partials')
 
