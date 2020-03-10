@@ -8,7 +8,7 @@ const {
     renderReactApp
 } = require('../controller/pages')
 
-router.route('/').get(renderReactApp)
+// router.route('/').get(renderReactApp)
 router.route('/tutorial').get(renderTutorial)
 router.route('/*').get(renderError)
 
