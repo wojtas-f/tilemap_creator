@@ -40,10 +40,6 @@ class Layer extends Component {
             let ground_width = this.props.tileSize * width
             this.setState({ tileSize: this.props.tileSize, ground_width })
         }
-
-        // if (this.props.selectedTile !== this.state.selectedTile) {
-        //     this.setState({ selectedTile: this.props.selectedTile })
-        // }
     }
 
     render() {

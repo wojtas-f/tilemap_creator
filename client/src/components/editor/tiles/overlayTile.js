@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import LocationName from '../LocationName'
 import AddLocation from '../modals/AddLocation'
 
+import { compare } from '../../../helpers/tiles_helper'
+
 class OverlayTile extends Component {
     state = {
         tiles: ['none', 'aqua', 'lime', 'red'],
@@ -15,13 +17,20 @@ class OverlayTile extends Component {
     }
 
     componentDidUpdate() {
-        if (this.props.tileSize !== this.state.width) {
+        const changeTileSize = compare(this.props.tileSize, this.state.width)
+        const changeSelectedTile = compare(
+            this.props.selectedTile,
+            this.state.selectedTile
+        )
+
+        if (changeTileSize) {
             this.setState({
                 width: this.props.tileSize,
                 height: this.props.tileSize
             })
         }
-        if (this.props.selectedTile !== this.state.selectedTile) {
+
+        if (changeSelectedTile) {
             this.setState({ selectedTile: this.props.selectedTile })
         }
     }

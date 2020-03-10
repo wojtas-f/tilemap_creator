@@ -10,6 +10,8 @@ import road_4 from '../../../tiles/road_v_top-end.png'
 import road_5 from '../../../tiles/road_v.png'
 import road_6 from '../../../tiles/road_v_bottom-end.png'
 
+import { compare } from '../../../helpers/tiles_helper'
+
 class GroundTile extends Component {
     state = {
         tiles_img: [
@@ -32,16 +34,20 @@ class GroundTile extends Component {
     }
 
     componentDidUpdate() {
-        if (this.props.tileSize !== this.state.width) {
+        const changeTileSize = compare(this.props.tileSize, this.state.width)
+        const changeSelectedTile = compare(
+            this.props.selectedTile,
+            this.state.selectedTile
+        )
+
+        if (changeTileSize) {
             this.setState({
                 width: this.props.tileSize,
                 height: this.props.tileSize
             })
         }
-        if (
-            this.props.selectedTile !== this.state.selectedTile &&
-            this.props.selectedTile < 100
-        ) {
+
+        if (changeSelectedTile) {
             this.setState({ selectedTile: this.props.selectedTile })
         }
     }

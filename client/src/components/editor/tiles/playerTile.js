@@ -4,6 +4,8 @@ import obstacle_1 from '../../../tiles/obstacle_1.png'
 import tree_1 from '../../../tiles/tree.png'
 import tree_2 from '../../../tiles/tree_2.png'
 
+import { compare } from '../../../helpers/tiles_helper'
+
 class PlayerTile extends Component {
     state = {
         tiles_img: [obstacle_1, tree_1, tree_2],
@@ -16,13 +18,20 @@ class PlayerTile extends Component {
     }
 
     componentDidUpdate() {
-        if (this.props.tileSize !== this.state.width) {
+        const changeTileSize = compare(this.props.tileSize, this.state.width)
+        const changeSelectedTile = compare(
+            this.props.selectedTile,
+            this.state.selectedTile
+        )
+
+        if (changeTileSize) {
             this.setState({
                 width: this.props.tileSize,
                 height: this.props.tileSize
             })
         }
-        if (this.props.selectedTile !== this.state.selectedTile) {
+
+        if (changeSelectedTile) {
             this.setState({ selectedTile: this.props.selectedTile })
         }
     }
