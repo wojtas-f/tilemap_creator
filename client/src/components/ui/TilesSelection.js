@@ -133,28 +133,21 @@ class TilesSelection extends Component {
 
     render() {
         let tiles
-        let colorFrames
+
         if (this.state.activeLayer === 'player_layer') {
-            console.log('Player tile tiles')
-            tiles = this.state.playerTiles
-            colorFrames = null
+            tiles = this.state.playerTiles.map(this.renderTile)
         } else if (this.state.activeLayer === 'ground_layer') {
-            tiles = this.state.groundTiles
-            colorFrames = null
+            tiles = this.state.groundTiles.map(this.renderTile)
         } else if (this.state.activeLayer === 'overlay_layer') {
+            tiles = this.state.frames.map(this.renderFrame)
+        } else {
             tiles = null
-            colorFrames = this.state.frames
         }
 
         return (
             <div className="ui__tiles-selection">
                 <p className="ui__tiles-selection_title">Select Tile</p>
-                <div className="ui__tiles-selection_tiles-menu">
-                    {tiles ? tiles.map(this.renderTile) : <br />}
-                </div>
-                <div className="ui__tiles-selection_tiles-menu">
-                    {colorFrames ? colorFrames.map(this.renderFrame) : <br />}
-                </div>
+                <div className="ui__tiles-selection_tiles-menu">{tiles}</div>
             </div>
         )
     }

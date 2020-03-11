@@ -76,6 +76,7 @@ body{
     margin-right: auto;
     margin-left: auto;
     padding: 5px 0;
+    border: 2px solid black;
 }
 
 .ui__tiles-selection_tiles-menu_example{
