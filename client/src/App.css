@@ -23,9 +23,13 @@ body{
 /* UI */
 
 .ui {
-    width: 15vw;
+    width: 20vw;
     min-height: 100vh;
-    background-color: lightgrey;
+    /* background-color: lightgrey; */
+    background-image: url('./tiles/ui-bgc.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .ui__layer-selection_title {
