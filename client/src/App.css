@@ -25,17 +25,18 @@ body{
 .ui {
     width: 20vw;
     min-height: 100vh;
-    /* background-color: lightgrey; */
-    background-image: url('./tiles/ui-bgc.jpg');
+    background-color: #576574;
+    color: #c8d6e5;
+    /* background-image: url('./tiles/ui-bgc.jpg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
 }
 
 .ui__layer-selection_title {
     font-size: 1.2rem;
-    font-weight: 400;
-    border-bottom: 1px solid black;
+    font-weight: 700;
+    border-top: 1px solid black;
 }
 .ui__layer-selection_list {
     list-style: none;
@@ -44,8 +45,8 @@ body{
 
 .ui__show-grid_title {
     font-size: 1.2rem;
-    font-weight: 400;
-    border-bottom: 1px solid black;
+    font-weight: 700;
+    border-top: 1px solid black;
 }
 
 .ui__show-grid_checkbox {
@@ -55,8 +56,8 @@ body{
 
 .ui__scale-map_title {
     font-size: 1.2rem;
-    font-weight: 400;
-    border-bottom: 1px solid black;
+    font-weight: 700;
+    border-top: 1px solid black;
 }
 
 .ui__scale-map_select {
@@ -69,8 +70,8 @@ body{
 
 .ui__tiles-selection_title {
     font-size: 1.2rem;
-    font-weight: 400;
-    border-bottom: 1px solid black;
+    font-weight: 700;
+    border-top: 1px solid black;
 }
 
 .ui__tiles-selection_tiles-menu {
@@ -101,8 +102,8 @@ body{
 
 .ui__map-size_title{
     font-size: 1.2rem;
-    font-weight: 400;
-    border-bottom: 1px solid black;
+    font-weight: 700;
+    border-top: 1px solid black;
 }
 
 .ui__map-size_label{
@@ -121,7 +122,6 @@ body{
 .tile_map {
     width: 85vw;
     height: 100vh;
-    background-color: gray;
     background-image: url('./tiles/background.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -132,6 +132,13 @@ body{
     overflow-y: auto;
     position: relative;
     
+}
+
+.tile-map__bgc-overlay{
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #c8d6e58a;
 }
 
 /* GRID LAYER */
