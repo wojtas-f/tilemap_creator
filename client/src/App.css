@@ -6,6 +6,11 @@
 body{
     overflow-x: hidden;
     overflow-y: hidden;
+    background-image: url('./tiles/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
 }
 .App {
     text-align: center;
@@ -129,10 +134,6 @@ body{
 .tile_map {
     width: 85vw;
     height: 100vh;
-    background-image: url('./tiles/background.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     border: 5px solid black;
     box-sizing: border-box;
     overflow-x: auto;
