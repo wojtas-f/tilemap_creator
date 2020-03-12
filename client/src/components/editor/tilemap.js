@@ -4,11 +4,17 @@ import Layer from './Layer'
 import VersionDisplay from './VersionDisplay'
 
 class Tilemap extends Component {
-    state = {
-        map_size: [20, 20],
-        showGrid: true,
-        active_layer: 'ground_layer'
+    constructor(props) {
+        super(props)
+        const width = props.mapSize[0]
+        const height = props.mapSize[1]
+        this.state = {
+            map_size: [width, height],
+            showGrid: true,
+            active_layer: 'ground_layer'
+        }
     }
+
     componentDidUpdate() {
         if (this.props.showGrid !== this.state.showGrid) {
             this.setState({ showGrid: this.props.showGrid })

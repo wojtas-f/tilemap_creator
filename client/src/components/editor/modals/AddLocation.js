@@ -21,10 +21,11 @@ class AddLocation extends Component {
 
     render() {
         return (
-            <div className="add-location">
+            <div className="modal-window">
+                <p className="modal-window_title">Add location</p>
                 <form
                     onSubmit={this.handleChange}
-                    className="add-location_form"
+                    className="modal-window_form"
                 >
                     {this.state.errorMessage ? (
                         <div className="add-location_form_error">
@@ -38,10 +39,10 @@ class AddLocation extends Component {
                         type="text"
                         name="locationName"
                         placeholder="Enter location name"
-                        className="add-location_form_input"
+                        className="modal-window_form_input"
                     />
 
-                    <button type="submit" className="add-location_form_button">
+                    <button type="submit" className="modal-window_form_button">
                         Save
                     </button>
                 </form>

@@ -3,7 +3,6 @@ import LayerSelection from './LayerSelection'
 import ShowGrid from './ShowGrid'
 import TileSize from './TileSize'
 import TilesSelection from './TilesSelection'
-import MapSize from './MapSize'
 
 /**
  * Root component for UI
@@ -33,7 +32,6 @@ class UI extends Component {
     render() {
         return (
             <div className="ui">
-                <MapSize />
                 <LayerSelection handleLayerChange={this.handleLayerChange} />
                 <ShowGrid
                     handleGridOpacityChange={this.handleGridOpacityChange}
