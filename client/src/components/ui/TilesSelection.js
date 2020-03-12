@@ -107,6 +107,7 @@ class TilesSelection extends Component {
      */
     renderFrame = frame => {
         let frameStyle
+        let frameContent = null
         if (frame.id === this.state.selectedTile) {
             frameStyle = {
                 borderWidth: 2,
@@ -122,13 +123,19 @@ class TilesSelection extends Component {
             }
         }
 
+        if (frame.id === 0) {
+            frameContent = <p style={{ fontSize: 8 }}>CLEAR</p>
+        }
+
         return (
             <div
                 key={frame.id}
                 className="tile"
                 style={frameStyle}
                 onClick={() => this.selectFrame(frame.id)}
-            ></div>
+            >
+                {frameContent}
+            </div>
         )
     }
 

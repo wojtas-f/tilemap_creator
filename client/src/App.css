@@ -34,6 +34,7 @@ body{
 }
 
 .ui__section_title {
+    padding: 5px 0;
     font-size: 1.2rem;
     font-weight: 700;
     border-top: 1px solid black;
@@ -79,7 +80,7 @@ body{
 }
 
 .ui__section_radio-list-item--active{
-    color: #ee5253 !important;
+    color: #ee5253;
     font-weight: 700;
 }
 
