@@ -33,48 +33,18 @@ body{
     background-size: cover; */
 }
 
-.ui__layer-selection_title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    border-top: 1px solid black;
-}
-.ui__layer-selection_list {
-    list-style: none;
-    text-align: start;
-}
-
-.ui__show-grid_title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    border-top: 1px solid black;
-}
-
-.ui__show-grid_checkbox {
-    text-align: start;
-    padding-left: 40px;
-}
-
-.ui__scale-map_title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    border-top: 1px solid black;
-}
-
-.ui__scale-map_select {
-    text-align: start;
-}
-
-.ui__tiles-selection {
+/* UI Styles */
+.ui__section {
     width: 100%;
 }
 
-.ui__tiles-selection_title {
+.ui__section_title {
     font-size: 1.2rem;
     font-weight: 700;
     border-top: 1px solid black;
 }
 
-.ui__tiles-selection_tiles-menu {
+.ui__section_tiles-selection-menu {
     display: flex;
     flex-wrap: wrap;
     max-width: 80%;
@@ -83,6 +53,23 @@ body{
     padding: 5px 0;
     border: 2px solid black;
 }
+
+.ui__section_radio-button-selection {
+    text-align: start;
+}
+
+.ui__section_checkbox {
+    text-align: start;
+    padding-left: 40px;
+}
+
+.ui__section_list {
+    list-style: none;
+    text-align: start;
+}
+
+
+/* --- */
 
 .ui__tiles-selection_tiles-menu_example{
     box-sizing: border-box;
@@ -100,20 +87,24 @@ body{
 }
 
 
-.ui__map-size_title{
+.ui__section_title{
     font-size: 1.2rem;
     font-weight: 700;
     border-top: 1px solid black;
 }
 
-.ui__map-size_label{
+.ui__section_form{
+    width: 100%;
+}
+
+.ui__section_form_label{
     width: 80%;
     margin-right: auto;
     margin-left: auto;
     display: flex;
 }
 
-.ui__map-size_label_input{
+.ui__section_form_label_input{
     width: 50%;
 }
 

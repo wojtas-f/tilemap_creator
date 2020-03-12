@@ -17,24 +17,24 @@ class MapSize extends Component {
 
     render() {
         return (
-            <div className="ui__map-size">
-                <p className="ui__map-size_title">Map size:</p>
-                <form>
-                    <label className="ui__map-size_label">
+            <div className="ui__section">
+                <p className="ui__section_title">Map size:</p>
+                <form className="ui__section_form">
+                    <label className="ui__section_form_label">
                         Width:
                         <input
                             type="text"
                             name="width"
-                            className="ui__map-size_label_input"
+                            className="ui__section_form_label_input"
                         />
                         tiles
                     </label>
-                    <label className="ui__map-size_label">
+                    <label className="ui__section_form_label">
                         Height:
                         <input
                             type="text"
                             name="height"
-                            className="ui__map-size_label_input"
+                            className="ui__section_form_label_input"
                         />
                         tiles
                     </label>

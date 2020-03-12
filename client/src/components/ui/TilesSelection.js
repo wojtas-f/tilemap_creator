@@ -145,9 +145,9 @@ class TilesSelection extends Component {
         }
 
         return (
-            <div className="ui__tiles-selection">
-                <p className="ui__tiles-selection_title">Select Tile</p>
-                <div className="ui__tiles-selection_tiles-menu">{tiles}</div>
+            <div className="ui__section">
+                <p className="ui__section_title">Select Tile</p>
+                <div className="ui__section_tiles-selection-menu">{tiles}</div>
             </div>
         )
     }

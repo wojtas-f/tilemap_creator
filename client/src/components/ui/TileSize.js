@@ -16,14 +16,14 @@ class TileSize extends Component {
 
     render() {
         return (
-            <div className="ui__scale-map">
-                <p className="ui__scale-map_title">Tile size:</p>
+            <div className="ui__section">
+                <p className="ui__section_title">Tile size:</p>
                 <label>
                     px:
                     <select
                         value={this.state.tileSize}
                         onChange={this.handleChange}
-                        className="ui__scale-map_select"
+                        className="ui__section_radio-button-selection"
                     >
                         <option value="24">24px</option>
                         <option value="32">32px</option>

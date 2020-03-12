@@ -17,11 +17,9 @@ class LayerSelection extends Component {
 
     render() {
         return (
-            <div className="ui__layer-selection">
-                <p className="ui__layer-selection_title">
-                    Select active layer:
-                </p>
-                <ul className="ui__layer-selection_list">
+            <div className="ui__section">
+                <p className="ui__section_title">Select active layer:</p>
+                <ul className="ui__section_list">
                     <li>
                         <label>
                             <input
