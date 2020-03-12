@@ -33,9 +33,10 @@ class TilesSelection extends Component {
             { name: road_6, id: 9 }
         ],
         playerTiles: [
-            { name: obstacle_1, id: 0 },
-            { name: tree_1, id: 1 },
-            { name: tree_2, id: 2 }
+            { name: 'clear', id: 0 },
+            { name: obstacle_1, id: 1 },
+            { name: tree_1, id: 2 },
+            { name: tree_2, id: 3 }
         ],
         frames: [
             { name: 'none', id: 0 },
@@ -81,7 +82,7 @@ class TilesSelection extends Component {
      */
     renderTile = tile => {
         let style
-
+        let sendTile
         if (tile.id === this.state.selectedTile) {
             style =
                 'ui__section_tiles-selection-menu_example ui__section_tiles-selection-menu_example--selected'
@@ -89,15 +90,29 @@ class TilesSelection extends Component {
             style = 'ui__section_tiles-selection-menu_example'
         }
 
-        return (
-            <img
-                key={tile.id}
-                src={tile.name}
-                alt="empty"
-                className={style}
-                onClick={() => this.selectTile(tile.id)}
-            />
-        )
+        if (tile.name === 'clear') {
+            sendTile = (
+                <div
+                    key={tile.id}
+                    className={style}
+                    onClick={() => this.selectTile(tile.id)}
+                >
+                    <p style={{ fontSize: 8 }}>CLEAR</p>
+                </div>
+            )
+        } else {
+            sendTile = (
+                <img
+                    key={tile.id}
+                    src={tile.name}
+                    alt="empty"
+                    className={style}
+                    onClick={() => this.selectTile(tile.id)}
+                />
+            )
+        }
+
+        return sendTile
     }
 
     /**
