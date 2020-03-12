@@ -17,9 +17,8 @@ class TileSize extends Component {
     render() {
         return (
             <div className="ui__section">
-                <p className="ui__section_title">Tile size:</p>
+                <p className="ui__section_title">Select Tile Size:</p>
                 <label>
-                    px:
                     <select
                         value={this.state.tileSize}
                         onChange={this.handleChange}

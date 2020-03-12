@@ -25,6 +25,7 @@ body{
     position: fixed;
     bottom: 0;
     z-index: 50;
+    pointer-events: none;
 }
 
 .editor__version-display_item{

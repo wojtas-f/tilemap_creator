@@ -64,7 +64,7 @@ class LayerSelection extends Component {
         let list = this.renderRadioList()
         return (
             <div className="ui__section">
-                <p className="ui__section_title">Select active layer:</p>
+                <p className="ui__section_title">Select Active Layer:</p>
                 <ul className="ui__section_radio-list">{list}</ul>
             </div>
         )
