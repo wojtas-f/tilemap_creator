@@ -6,6 +6,7 @@ const cors = require('cors')
 
 const app = express()
 
+const AppRouter = require('./src/routes/app')
 const PagesRouter = require('./src/routes/pages')
 
 const publicServerDirectoryPath = path.join(__dirname, './public')
@@ -25,6 +26,7 @@ app.use(express.static(root))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+app.use(AppRouter)
 app.use(PagesRouter)
 
 module.exports = app
