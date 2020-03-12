@@ -224,6 +224,12 @@ body{
     font-weight: 700;
 }
 
+.modal-window_error{
+    font-size: 1.5rem;
+    color: #ee5253;
+    font-weight: 400;
+}
+
 .modal-window_form{
     padding: 20px;
     background-color: #576574;
