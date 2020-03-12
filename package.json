@@ -1,6 +1,6 @@
 {
   "name": "tile_map_creator",
-  "version": "1.1.0",
+  "version": "1.0.2",
   "description": "Map editor for creating tile maps",
   "main": "server.js",
   "engines":{
