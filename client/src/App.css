@@ -27,13 +27,8 @@ body{
     min-height: 100vh;
     background-color: #576574;
     color: #c8d6e5;
-    /* background-image: url('./tiles/ui-bgc.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; */
 }
 
-/* UI Styles */
 .ui__section {
     width: 100%;
 }
@@ -69,19 +64,23 @@ body{
     border: 2px red outset;
 }
 
-
-.ui__section_radio-button-selection {
-    text-align: start;
-}
-
 .ui__section_checkbox {
     text-align: start;
     padding-left: 40px;
 }
 
-.ui__section_list {
+.ui__section_radio-list {
     list-style: none;
     text-align: start;
+}
+
+.ui__section_radio-list-item{
+    color: #c8d6e5;
+}
+
+.ui__section_radio-list-item--active{
+    color: #ee5253 !important;
+    font-weight: 700;
 }
 
 .ui__section_title{

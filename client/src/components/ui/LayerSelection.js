@@ -2,7 +2,24 @@ import React, { Component } from 'react'
 
 class LayerSelection extends Component {
     state = {
-        active_layer: 'ground_layer'
+        active_layer: 'ground_layer',
+        layers: [
+            {
+                type: 'ground_layer',
+                name: 'Ground Layer',
+                id: 0
+            },
+            {
+                type: 'player_layer',
+                name: 'Player Layer',
+                id: 1
+            },
+            {
+                type: 'overlay_layer',
+                name: 'Overlay Layer',
+                id: 2
+            }
+        ]
     }
 
     handleChange = event => {
@@ -15,51 +32,40 @@ class LayerSelection extends Component {
         this.props.handleLayerChange(active_layer)
     }
 
+    renderRadioList = () => {
+        let list = this.state.layers.map(layer => {
+            let style
+
+            if (layer.type === this.state.active_layer) {
+                style =
+                    'ui__section_radio-list-item ui__section_radio-list-item--active'
+            } else {
+                style = 'ui__section_radio-list-item'
+            }
+
+            return (
+                <li className={style} key={layer.id}>
+                    <label>
+                        <input
+                            type="radio"
+                            value={layer.type}
+                            checked={this.state.active_layer === layer.type}
+                            onChange={this.handleChange}
+                        />
+                        {layer.name}
+                    </label>
+                </li>
+            )
+        })
+        return list
+    }
+
     render() {
+        let list = this.renderRadioList()
         return (
             <div className="ui__section">
                 <p className="ui__section_title">Select active layer:</p>
-                <ul className="ui__section_list">
-                    <li>
-                        <label>
-                            <input
-                                type="radio"
-                                value="ground_layer"
-                                checked={
-                                    this.state.active_layer === 'ground_layer'
-                                }
-                                onChange={this.handleChange}
-                            />
-                            Ground Layer
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input
-                                type="radio"
-                                value="player_layer"
-                                checked={
-                                    this.state.active_layer === 'player_layer'
-                                }
-                                onChange={this.handleChange}
-                            />
-                            Player Layer
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input
-                                type="radio"
-                                value="overlay_layer"
-                                checked={
-                                    this.state.active_layer === 'overlay_layer'
-                                }
-                                onChange={this.handleChange}
-                            />
-                            Overlay Layer
-                        </label>
-                    </li>
-                </ul>
+                <ul className="ui__section_radio-list">{list}</ul>
             </div>
         )
     }
