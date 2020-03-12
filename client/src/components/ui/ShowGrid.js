@@ -19,9 +19,9 @@ class ShowGrid extends Component {
 
     render() {
         return (
-            <div className="ui__show-grid">
-                <p className="ui__show-grid_title">Show Grid</p>
-                <div className="ui__show-grid_checkbox">
+            <div className="ui__section">
+                <p className="ui__section_title">Show Grid</p>
+                <div className="ui__section_checkbox">
                     <label>
                         <input
                             type="checkbox"

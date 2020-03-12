@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 
 import Tilemap from './editor/tilemap'
 import UI from './ui/ui'
+import MapSize from './editor/modals/MapSize'
 
 /**
  * Root element for map editor and UI
@@ -11,7 +12,8 @@ class Editor extends Component {
         showGrid: true,
         active_layer: 'ground_layer',
         selectedTile: 0,
-        tileSize: 32
+        tileSize: 32,
+        mapSize: null
     }
 
     handleGridOpacityChange = show => {
@@ -34,9 +36,14 @@ class Editor extends Component {
         this.setState({ selectedTile })
     }
 
+    handleMapSize = mapSize => {
+        console.log(mapSize)
+        this.setState({ mapSize })
+    }
+
     render() {
-        return (
-            <div className="Editor">
+        const appReady = (
+            <Fragment>
                 <UI
                     handleGridOpacityChange={this.handleGridOpacityChange}
                     handleLayerChange={this.handleLayerChange}
@@ -48,7 +55,14 @@ class Editor extends Component {
                     activeLayer={this.state.active_layer}
                     tileSize={this.state.tileSize}
                     selectedTile={this.state.selectedTile}
+                    mapSize={this.state.mapSize}
                 />
+            </Fragment>
+        )
+        const askMapSize = <MapSize handleMapSize={this.handleMapSize} />
+        return (
+            <div className="Editor">
+                {this.state.mapSize ? appReady : askMapSize}
             </div>
         )
     }

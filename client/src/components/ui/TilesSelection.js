@@ -33,9 +33,10 @@ class TilesSelection extends Component {
             { name: road_6, id: 9 }
         ],
         playerTiles: [
-            { name: obstacle_1, id: 0 },
-            { name: tree_1, id: 1 },
-            { name: tree_2, id: 2 }
+            { name: 'clear', id: 0 },
+            { name: obstacle_1, id: 1 },
+            { name: tree_1, id: 2 },
+            { name: tree_2, id: 3 }
         ],
         frames: [
             { name: 'none', id: 0 },
@@ -81,22 +82,37 @@ class TilesSelection extends Component {
      */
     renderTile = tile => {
         let style
-
+        let sendTile
         if (tile.id === this.state.selectedTile) {
-            style = 'ui__tiles-selection_tiles-menu_example tile-selected'
+            style =
+                'ui__section_tiles-selection-menu_example ui__section_tiles-selection-menu_example--selected'
         } else {
-            style = 'ui__tiles-selection_tiles-menu_example'
+            style = 'ui__section_tiles-selection-menu_example'
         }
 
-        return (
-            <img
-                key={tile.id}
-                src={tile.name}
-                alt="empty"
-                className={style}
-                onClick={() => this.selectTile(tile.id)}
-            />
-        )
+        if (tile.name === 'clear') {
+            sendTile = (
+                <div
+                    key={tile.id}
+                    className={style}
+                    onClick={() => this.selectTile(tile.id)}
+                >
+                    <p style={{ fontSize: 8 }}>CLEAR</p>
+                </div>
+            )
+        } else {
+            sendTile = (
+                <img
+                    key={tile.id}
+                    src={tile.name}
+                    alt="empty"
+                    className={style}
+                    onClick={() => this.selectTile(tile.id)}
+                />
+            )
+        }
+
+        return sendTile
     }
 
     /**
@@ -106,6 +122,7 @@ class TilesSelection extends Component {
      */
     renderFrame = frame => {
         let frameStyle
+        let frameContent = null
         if (frame.id === this.state.selectedTile) {
             frameStyle = {
                 borderWidth: 2,
@@ -121,13 +138,19 @@ class TilesSelection extends Component {
             }
         }
 
+        if (frame.id === 0) {
+            frameContent = <p style={{ fontSize: 8 }}>CLEAR</p>
+        }
+
         return (
             <div
                 key={frame.id}
                 className="tile"
                 style={frameStyle}
                 onClick={() => this.selectFrame(frame.id)}
-            ></div>
+            >
+                {frameContent}
+            </div>
         )
     }
 
@@ -145,9 +168,9 @@ class TilesSelection extends Component {
         }
 
         return (
-            <div className="ui__tiles-selection">
-                <p className="ui__tiles-selection_title">Select Tile</p>
-                <div className="ui__tiles-selection_tiles-menu">{tiles}</div>
+            <div className="ui__section">
+                <p className="ui__section_title">Select Tile</p>
+                <div className="ui__section_tiles-selection-menu">{tiles}</div>
             </div>
         )
     }

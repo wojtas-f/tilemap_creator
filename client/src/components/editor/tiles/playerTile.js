@@ -8,9 +8,8 @@ import { compare } from '../../../helpers/tiles_helper'
 
 class PlayerTile extends Component {
     state = {
-        tiles_img: [obstacle_1, tree_1, tree_2],
+        tiles_img: ['clear', obstacle_1, tree_1, tree_2],
         tile: 0,
-        filled: false,
         tileSet: 'playerTiles',
         width: 32,
         height: 32,
@@ -40,11 +39,8 @@ class PlayerTile extends Component {
      * Change tile image or tile frame to the image/frame selected in Tile Selection component
      */
     changeTile = () => {
-        if (
-            this.state.tile !== this.state.selectedTile ||
-            this.state.filled === false
-        ) {
-            this.setState({ tile: this.state.selectedTile, filled: true })
+        if (this.state.tile !== this.state.selectedTile) {
+            this.setState({ tile: this.state.selectedTile })
         }
     }
 
@@ -87,10 +83,10 @@ class PlayerTile extends Component {
 
     render() {
         let tile
-        if (this.state.filled) {
-            tile = this.renderTile()
-        } else {
+        if (this.state.tile === 0) {
             tile = this.renderFrame()
+        } else {
+            tile = this.renderTile()
         }
 
         return <Fragment>{tile}</Fragment>

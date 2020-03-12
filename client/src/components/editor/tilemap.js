@@ -1,13 +1,20 @@
 import React, { Component, Fragment } from 'react'
 import GridLayer from './grid_layer'
 import Layer from './Layer'
+import VersionDisplay from './VersionDisplay'
 
 class Tilemap extends Component {
-    state = {
-        map_size: [20, 20],
-        showGrid: true,
-        active_layer: 'ground_layer'
+    constructor(props) {
+        super(props)
+        const width = props.mapSize[0]
+        const height = props.mapSize[1]
+        this.state = {
+            map_size: [width, height],
+            showGrid: true,
+            active_layer: 'ground_layer'
+        }
     }
+
     componentDidUpdate() {
         if (this.props.showGrid !== this.state.showGrid) {
             this.setState({ showGrid: this.props.showGrid })
@@ -22,7 +29,7 @@ class Tilemap extends Component {
         return (
             <Fragment>
                 <div className="tile_map">
-                    <div className="tile-map__bgc-overlay"></div>>
+                    <div className="tile-map__bgc-overlay"></div>
                     <GridLayer
                         width={this.state.map_size[0]}
                         height={this.state.map_size[1]}
@@ -53,6 +60,7 @@ class Tilemap extends Component {
                         layerType="ground_layer"
                         selectedTile={this.props.selectedTile}
                     />
+                    <VersionDisplay />
                 </div>
             </Fragment>
         )
