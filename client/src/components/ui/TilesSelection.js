@@ -83,9 +83,10 @@ class TilesSelection extends Component {
         let style
 
         if (tile.id === this.state.selectedTile) {
-            style = 'ui__tiles-selection_tiles-menu_example tile-selected'
+            style =
+                'ui__section_tiles-selection-menu_example ui__section_tiles-selection-menu_example--selected'
         } else {
-            style = 'ui__tiles-selection_tiles-menu_example'
+            style = 'ui__section_tiles-selection-menu_example'
         }
 
         return (

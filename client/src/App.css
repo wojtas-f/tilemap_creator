@@ -54,6 +54,22 @@ body{
     border: 2px solid black;
 }
 
+.ui__section_tiles-selection-menu_example{
+    box-sizing: border-box;
+    width: 32px;
+    height: 32px;
+}
+
+.ui__section_tiles-selection-menu_example:hover{
+    cursor: pointer;
+    border: 2px aquamarine outset;
+}
+
+.ui__section_tiles-selection-menu_example--selected{
+    border: 2px red outset;
+}
+
+
 .ui__section_radio-button-selection {
     text-align: start;
 }
@@ -67,25 +83,6 @@ body{
     list-style: none;
     text-align: start;
 }
-
-
-/* --- */
-
-.ui__tiles-selection_tiles-menu_example{
-    box-sizing: border-box;
-    width: 32px;
-    height: 32px;
-}
-
-.ui__tiles-selection_tiles-menu_example:hover{
-    cursor: pointer;
-    border: 2px aquamarine outset;
-}
-
-.tile-selected{
-    border: 2px red outset;
-}
-
 
 .ui__section_title{
     font-size: 1.2rem;
@@ -107,6 +104,8 @@ body{
 .ui__section_form_label_input{
     width: 50%;
 }
+
+
 
 /* Tilemap */
 
