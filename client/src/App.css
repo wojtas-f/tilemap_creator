@@ -20,6 +20,20 @@ body{
     overflow-y: hidden;
 }
 
+.editor__version-display{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    z-index: 50;
+}
+
+.editor__version-display_item{
+    color: aqua;
+    font-weight: 500;
+    font-style: italic;
+    padding: 0 10px;
+}
+
 /* UI */
 
 .ui {

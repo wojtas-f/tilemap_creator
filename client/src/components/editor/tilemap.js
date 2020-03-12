@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import GridLayer from './grid_layer'
 import Layer from './Layer'
+import VersionDisplay from './VersionDisplay'
 
 class Tilemap extends Component {
     state = {
@@ -53,6 +54,7 @@ class Tilemap extends Component {
                         layerType="ground_layer"
                         selectedTile={this.props.selectedTile}
                     />
+                    <VersionDisplay />
                 </div>
             </Fragment>
         )
