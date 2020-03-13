@@ -8,6 +8,7 @@ const app = express()
 
 const AppRouter = require('./src/routes/app')
 const PagesRouter = require('./src/routes/pages')
+const SwaggerRouter = require('./src/swaggercfg')
 
 const publicServerDirectoryPath = path.join(__dirname, './public')
 const root = path.join(__dirname, 'client', 'build')
@@ -26,7 +27,9 @@ app.use(express.static(root))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+app.use(SwaggerRouter)
 app.use(AppRouter)
 app.use(PagesRouter)
+
 
 module.exports = app
