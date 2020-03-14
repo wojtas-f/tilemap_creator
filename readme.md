@@ -25,19 +25,19 @@ This tool allows you to build your own map made of tiles. Three interactive laye
 * You can specify the size of the map
 * You can choose the size of tiles (24/32/48/64px)
 
-### _Ground Layer_
+#### _Ground Layer_
 
 Basic layer to create the background.
 
-### _Player Layer_
+#### _Player Layer_
 
 This is a layer where you set up all obstacles or elements player can interact with.
 
-### _Overlay Layer_
+#### _Overlay Layer_
 
 This is where you can place Location Names and color frames to mark dangerous or friendly territories.
 
-### _Grid Layer_
+#### _Grid Layer_
 
 Simple grid to show how the map is divided. You have an option to turn off the grid.
 
