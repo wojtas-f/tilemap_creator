@@ -49,9 +49,13 @@ Simple grid to show how the map is divided. You have an option to turn off the g
 * Node.js / Express.js
 * CSS
 
+***
+
 ## API Documentation and testing
 
 Testing and documentation made with Swagger
+
+***
 
 ## Client Documentation and testing
 
