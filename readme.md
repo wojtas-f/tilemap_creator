@@ -6,6 +6,8 @@ This tool allows you to build your own map made of tiles. Three interactive laye
 
 1. [Features](#Features)
 2. [Build With](#Build-With)
+3. [API Documentation and testing](#API-Documentation-and-testing)
+4. [Client Documentation and testing](#Client-Documentation-and-testing)
 
 ***
 
@@ -46,3 +48,11 @@ Simple grid to show how the map is divided. You have an option to turn off the g
 * React.js
 * Node.js / Express.js
 * CSS
+
+## API Documentation and testing
+
+Testing and documentation made with Swagger
+
+## Client Documentation and testing
+
+.....
