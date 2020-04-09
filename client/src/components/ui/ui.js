@@ -3,29 +3,29 @@ import LayerSelection from './LayerSelection'
 import ShowGrid from './ShowGrid'
 import TileSize from './TileSize'
 import TilesSelection from './TilesSelection'
-
+import ButtonBar from './ButtonBar'
 /**
  * Root component for UI
  */
 class UI extends Component {
     state = {
-        activeLayer: 'ground_layer'
+        activeLayer: 'ground_layer',
     }
 
-    handleGridOpacityChange = show => {
+    handleGridOpacityChange = (show) => {
         this.props.handleGridOpacityChange(show)
     }
 
-    handleLayerChange = active_layer => {
+    handleLayerChange = (active_layer) => {
         this.props.handleLayerChange(active_layer)
         this.setState({ activeLayer: active_layer })
     }
 
-    handleMapScaling = tileSize => {
+    handleMapScaling = (tileSize) => {
         this.props.handleMapScaling(tileSize)
     }
 
-    handleTileChange = selectedTile => {
+    handleTileChange = (selectedTile) => {
         this.props.handleTileChange(selectedTile)
     }
 
@@ -41,6 +41,7 @@ class UI extends Component {
                     handleTileChange={this.handleTileChange}
                     activeLayer={this.state.activeLayer}
                 />
+                <ButtonBar />
             </div>
         )
     }
