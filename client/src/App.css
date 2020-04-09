@@ -1,6 +1,12 @@
+
+/* Global */
+
 :root {
     --map-position-top: 50%;
     --map-position-left: 50%;
+    --ui-main: #576574;
+    --ui-secondary: #c8d6e5;
+    --ui-secondary-hov: #c8d6e59a;
 }
 
 body{
@@ -12,6 +18,13 @@ body{
     background-size: cover;
     height: 100vh;
 }
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* App */
 .App {
     text-align: center;
     display: flex;
@@ -47,7 +60,7 @@ body{
 .ui {
     width: 20vw;
     min-height: 100vh;
-    background-color: #576574;
+    background-color: var(--ui-main);
     color: #c8d6e5;
 }
 
@@ -68,8 +81,9 @@ body{
     max-width: 80%;
     margin-right: auto;
     margin-left: auto;
-    padding: 5px 0;
+    padding: 10px 0;
     border: 2px solid black;
+    background-color: var(--ui-secondary);
 }
 
 .ui__section_tiles-selection-menu_example{
@@ -127,7 +141,36 @@ body{
     width: 50%;
 }
 
+.ui__button-bar{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    margin: 10px;
+}
 
+.ui-button-bar_item{
+    padding: 5px;
+    border: 1px solid black;
+    background-color: var(--ui-secondary);
+    font-size: 1.5rem;
+    margin: 5px;
+    height: 32px;
+    width: 32px;
+    font-weight: 700;
+
+}
+
+.ui-button-bar_item img{
+    width: 32px;
+    /*height: 32px;*/
+}
+
+
+.ui-button-bar_item:hover{
+    cursor: pointer;
+    background-color: var(--ui-secondary-hov);
+}
 
 /* Tilemap */
 
