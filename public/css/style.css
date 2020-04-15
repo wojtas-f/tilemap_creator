@@ -1,93 +1,125 @@
-body{
+:root {
+    --map-position-top: 50%;
+    --map-position-left: 50%;
+    --ui-main: #2f2f2f;
+    --ui-bgc: #919191;
+    --ui-secondary: #70ae6e;
+    --ui-secondary-hov: #3c6e71;
+    --accents: #beee62;
+    --text: #d4d1d1;
+}
+
+body {
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--ui-main);
+    color: var(--text);
 }
 
-hr{
+hr {
     width: 90%;
     margin: 20px 0;
 }
 
-.header{
+.header {
     width: 100%;
     margin-top: 10px;
-    padding: 0; 
-    min-height: 200px; 
+    padding: 0;
+    min-height: 200px;
     background-image: url(/img/header.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 
-
-.main{
+.main {
     width: 80%;
     display: flex;
     flex-direction: row;
-
 }
 
-.navbar{
+.navbar {
     width: 30%;
     border-right: 1px solid black;
 }
 
-
-.navbar__title{
+.navbar__title {
     font-family: 'Trade Winds', cursive;
     font-size: 2.5rem;
+    color: var(--accents);
 }
 
-
-.navbar__list{
+.navbar__list {
     list-style-type: disc;
 }
 
-.navbar__list_item{
+.navbar__list_item {
     border-bottom: black dotted 1px;
     padding: 5px;
     margin: 10px 0;
 }
 
-.navbar__list_item:hover{
+.navbar__list_item:hover {
     cursor: pointer;
-    color: orangered;
+    color: var(--accents);
 }
 
-.navbar__list_item_link{
+.navbar__list_item_link {
     text-decoration: none;
-    color:  inherit;
-
+    color: inherit;
 }
-
-
 
 /* ARTICLES */
 
-.articles{
+.articles {
     width: 70%;
     padding-left: 40px;
     overflow-y: auto;
 }
 
-.articles__section{
+.articles__section {
     width: 50%;
     text-align: left !important;
+    display: flex;
+    flex-direction: column;
 }
-.articles__section_title{
+.articles__section_title {
     font-size: 2.4rem;
     font-family: 'Trade Winds', cursive;
+    color: var(--accents);
 }
 
-.articles__section_image{
+.articles__section_image {
     width: 200px;
     height: auto;
+    border: 1px outset var(--accents);
+    justify-self: center;
+    align-self: center;
 }
 
-.articles__line{
+.articles__line {
     width: 90%;
     margin: 20px 0;
+}
+
+@media only screen and (max-width: 700px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .navbar {
+        width: 100%;
+        border: none;
+    }
+
+    .articles {
+        width: 100%;
+    }
+    .articles__section {
+        width: 100%;
+        text-align: center !important;
+    }
 }
