@@ -1,13 +1,12 @@
 # Tile Map Creator
 
-This tool allows you to build your own map made of tiles. Three interactive layers gives you an ability to customize background style, player obstacles and location markings on the map.
+This tool allows you to build a two-dimensional map made of tiles. Three interactive layers give you an ability to customize background style, player obstacles, and location markings on the map.
 
 ## Table of Contents
 
 1. [Features](#Features)
 2. [Build With](#Build-With)
 3. [API Documentation and testing](#API-Documentation-and-testing)
-4. [Client Documentation and testing](#Client-Documentation-and-testing)
 
 ***
 
@@ -17,7 +16,7 @@ This tool allows you to build your own map made of tiles. Three interactive laye
 
 ## Features
 
-* 4 layerys
+* 4 layers
   * Ground Layer
   * Player Layer
   * Overlay Layer
@@ -25,21 +24,21 @@ This tool allows you to build your own map made of tiles. Three interactive laye
 * You can specify the size of the map
 * You can choose the size of tiles (24/32/48/64px)
 
-#### _Ground Layer_
+### _Ground Layer_
 
-Basic layer to create the background.
+The ground layer is the bottom level of the map. The elements from higher levels can cover this layer.
 
-#### _Player Layer_
+### _Player Layer_
 
-This is a layer where you set up all obstacles or elements player can interact with.
+The player level is where you can place all obstacles or interactive elements.
 
-#### _Overlay Layer_
+### _Overlay Layer_
 
-This is where you can place Location Names and color frames to mark dangerous or friendly territories.
+You can add the location names and mark friendly or dangerous areas.
 
-#### _Grid Layer_
+### _Grid Layer_
 
-Simple grid to show how the map is divided. You have an option to turn off the grid.
+A simple grid dividing the map will make it easy to see boundaries of specific tiles. You have an option to turn off the grid.
 
 ***
 
@@ -53,10 +52,6 @@ Simple grid to show how the map is divided. You have an option to turn off the g
 
 ## API Documentation and testing
 
-Testing and documentation made with Swagger
+Testing and documentation made with Swagger.
 
 ***
-
-## Client Documentation and testing
-
-.....
