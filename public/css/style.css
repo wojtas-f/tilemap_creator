@@ -1,9 +1,22 @@
+:root {
+    --map-position-top: 50%;
+    --map-position-left: 50%;
+    --ui-main: #2F2F2F;
+    --ui-bgc: #919191;
+    --ui-secondary: #70AE6E;
+    --ui-secondary-hov: #3C6E71;
+    --accents: #BEEE62;
+    --text: #d4d1d1;
+}
+
 body{
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--ui-main);
+    color: var(--text);
 }
 
 hr{
@@ -39,6 +52,7 @@ hr{
 .navbar__title{
     font-family: 'Trade Winds', cursive;
     font-size: 2.5rem;
+    color: var(--accents)
 }
 
 
@@ -54,7 +68,7 @@ hr{
 
 .navbar__list_item:hover{
     cursor: pointer;
-    color: orangered;
+    color: var(--accents);
 }
 
 .navbar__list_item_link{
@@ -80,6 +94,7 @@ hr{
 .articles__section_title{
     font-size: 2.4rem;
     font-family: 'Trade Winds', cursive;
+    color: var(--accents);
 }
 
 .articles__section_image{
