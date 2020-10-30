@@ -2,6 +2,8 @@
 
 This tool allows you to build a two-dimensional map made of tiles. Three interactive layers give you an ability to customize background style, player obstacles, and location markings on the map.
 
+[TileMapCreator Preview](https://tilemap-creator.herokuapp.com/)
+
 ## Table of Contents
 
 1. [Features](#Features)
